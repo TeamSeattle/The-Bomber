@@ -63,9 +63,38 @@ public class Engine implements Runnable {
     public void run() {
         initialize();
 
+        // This handles the frames per second
+        // Don't ask about this code
+        double timePerTick =  1_000_000_000 / FRAMES_PER_SECOND;
+        double delta = 0;
+        long now;
+        long lastTime = System.nanoTime();
+        long timer = 0;
+        int ticks = 0;
+
         while (running) {
-            thick();
-            render();
+
+            // This is also part of the code to limit the game loop ticks
+            now = System.nanoTime();
+            delta += (now - lastTime) / timePerTick;
+            timer += now - lastTime;
+            lastTime = now;
+
+            if (delta >= 1){
+                tick();
+                render();
+
+                // For the FPS
+                ticks++;
+                delta--;
+            }
+
+            // FPS Counter // Show FPS every second
+            if (timer >= 1_000_000_000){
+                System.out.println("> " + ticks + " FPS / Ticks");
+                ticks = 0;
+                timer = 0;
+            }
         }
 
         stop();
@@ -82,13 +111,13 @@ public class Engine implements Runnable {
      * This method is called every frame
      * It updates everything (values, object etc.)
      */
-    private void thick() {
+    private void tick() {
 
     }
 
     /**
      * This method is called every frame
-     * It will render everything After the thick(); does it job
+     * It will render everything After the tick(); does it job
      */
     private void render() {
         bufferStrategy = display.getCanvas().getBufferStrategy();
