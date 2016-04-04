@@ -1,0 +1,24 @@
+Welcome to the levels folder
+
+============================
+Here we will store all the level files
+
+============================
+The files will be in the .txt format
+We will name them in the following format
+
+        level_<name>_<number of the level>.txt
+
+        Example:
+        level_seattle_1.txt
+        level_florida_2.txt
+        level_balkan_3.txt
+
+============================
+IMPORTANT <---
+At the begging of every file (the first line)
+we will put a special token to recognize
+what the file is for and how we will read it
+
+The token for the level files will be
+#leveldata

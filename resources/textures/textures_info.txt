@@ -1,0 +1,17 @@
+Welcome to the textures folder
+
+============================
+Here we will store all the texture
+files that we will need
+
+============================
+The files will be in the .png format
+Please no .jpeg format
+We will name them in the following format
+
+        <name>.png
+
+        Example:
+        cow.png
+        player.png
+        tomato.png

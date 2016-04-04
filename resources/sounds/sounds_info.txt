@@ -1,0 +1,15 @@
+Welcome to the sounds folder
+
+============================
+Here we will store all the sounds that we will
+need for our game
+
+============================
+The files will be in the .mp3 format
+We will name them in the following format
+
+        sound_<name>.mp3
+
+        Example:
+        sound_chicken.mp3
+        sound_cow.mp3
