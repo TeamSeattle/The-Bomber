@@ -31,7 +31,6 @@ package Main;
 
 import Display.Display;
 import Graphics.Assets;
-
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -41,7 +40,7 @@ public class Engine implements Runnable {
     // Properties that we will use
     private Display display;
     private Thread thread;
-    private static final int FRAMES_PER_SECOND = 60;
+    private static final int FRAMES_PER_SECOND = 1000;
 
     // This boolean will regulate the GAME LOOP
     private boolean running = false;
@@ -67,7 +66,7 @@ public class Engine implements Runnable {
 
         // This handles the frames per second
         // Don't ask about this code
-        double timePerTick =  1_000_000_000 / FRAMES_PER_SECOND;
+        double timePerTick = 1_000_000_000 / FRAMES_PER_SECOND;
         double delta = 0;
         long now;
         long lastTime = System.nanoTime();
@@ -82,7 +81,7 @@ public class Engine implements Runnable {
             timer += now - lastTime;
             lastTime = now;
 
-            if (delta >= 1){
+            if (delta >= 1) {
                 tick();
                 render();
 
@@ -92,7 +91,7 @@ public class Engine implements Runnable {
             }
 
             // FPS Counter // Show FPS every second
-            if (timer >= 1_000_000_000){
+            if (timer >= 1_000_000_000) {
                 System.out.println("> " + ticks + " FPS / Ticks");
                 ticks = 0;
                 timer = 0;
@@ -115,8 +114,10 @@ public class Engine implements Runnable {
      * This method is called every frame
      * It updates everything (values, object etc.)
      */
-    private void tick() {
+    public int position = 0;
 
+    private void tick() {
+        position++;
     }
 
     /**
@@ -141,7 +142,7 @@ public class Engine implements Runnable {
         // Draw HERE !!!
 
         //Test drawing from the Assets.
-        graphics.drawImage(Assets.dirt,20,20,null);
+        graphics.drawImage(Assets.dirt, position, position, null);
 
         // End Drawing !!
 

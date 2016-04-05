@@ -7,7 +7,7 @@ public class SpriteSheet {
 
     /**
      * Constructor
-     * It takes
+     * It takes a buffered image with encoding of 64 bits
      */
     public SpriteSheet(BufferedImage sheet) {
         this.sheet = sheet;
