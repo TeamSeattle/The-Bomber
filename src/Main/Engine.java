@@ -30,13 +30,10 @@
 package Main;
 
 import Display.Display;
-import gfx.Assets;
-import gfx.ImageLoader;
-import gfx.SpriteSheet;
+import Graphics.Assets;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
 // This class will be the main in our game, it will handle.
 public class Engine implements Runnable {
@@ -52,8 +49,6 @@ public class Engine implements Runnable {
     // Properties for rendering
     private BufferStrategy bufferStrategy;
     private Graphics graphics;
-
-
 
     /**
      * Constructor
