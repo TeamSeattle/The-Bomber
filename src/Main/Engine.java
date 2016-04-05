@@ -30,8 +30,13 @@
 package Main;
 
 import Display.Display;
+import gfx.Assets;
+import gfx.ImageLoader;
+import gfx.SpriteSheet;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 
 // This class will be the main in our game, it will handle.
 public class Engine implements Runnable {
@@ -47,6 +52,8 @@ public class Engine implements Runnable {
     // Properties for rendering
     private BufferStrategy bufferStrategy;
     private Graphics graphics;
+
+
 
     /**
      * Constructor
@@ -105,6 +112,8 @@ public class Engine implements Runnable {
      */
     private void initialize() {
         display = new Display();
+        //Load our test Assets , for the test...
+        Assets.initialize();
     }
 
     /**
@@ -134,9 +143,11 @@ public class Engine implements Runnable {
         // Clear the screen
         graphics.clearRect(0, 0, Display.WINDOW_WIDTH, Display.WINDOW_HEIGHT);
 
-        // Draw HERE !!
-        graphics.setColor(Color.pink);
-        graphics.fillRect(0, 0, 100, 100);
+        // Draw HERE !!!
+
+        //Test drawing from the Assets.
+        graphics.drawImage(Assets.dirt,20,20,null);
+
         // End Drawing !!
 
         graphics.dispose();
