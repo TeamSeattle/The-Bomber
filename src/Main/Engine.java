@@ -37,17 +37,21 @@ import java.awt.image.BufferStrategy;
 // This class will be the main in our game, it will handle.
 public class Engine implements Runnable {
 
+
     // Properties that we will use
     private Display display;
     private Thread thread;
-    private static final int FRAMES_PER_SECOND = 1000;
+    private static final int FRAMES_PER_SECOND = 120;
+
 
     // This boolean will regulate the GAME LOOP
     private boolean running = false;
 
+
     // Properties for rendering
-    private BufferStrategy bufferStrategy;
-    private Graphics graphics;
+    public BufferStrategy bufferStrategy;
+    public static Graphics graphics;
+
 
     /**
      * Constructor
@@ -55,6 +59,7 @@ public class Engine implements Runnable {
     public Engine() {
 
     }
+
 
     /**
      * This is the method that will be called
@@ -90,7 +95,7 @@ public class Engine implements Runnable {
                 delta--;
             }
 
-            // FPS Counter // Show FPS every second
+            // FPS Counter
             if (timer >= 1_000_000_000) {
                 System.out.println("> " + ticks + " FPS / Ticks");
                 ticks = 0;
@@ -101,24 +106,24 @@ public class Engine implements Runnable {
         stop();
     }
 
+
     /**
      * Setup everything we need for the game
      */
     private void initialize() {
         display = new Display();
-        //Load our test Assets , for the test...
         Assets.initialize();
     }
+
 
     /**
      * This method is called every frame
      * It updates everything (values, object etc.)
      */
-    public int position = 0;
-
     private void tick() {
-        position++;
+
     }
+
 
     /**
      * This method is called every frame
@@ -135,27 +140,26 @@ public class Engine implements Runnable {
 
         // Initialize the graphics object
         graphics = bufferStrategy.getDrawGraphics();
-
         // Clear the screen
-        graphics.clearRect(0, 0, Display.WINDOW_WIDTH, Display.WINDOW_HEIGHT);
+        Display.clearScreen();
 
-        // Draw HERE !!!
+        // Draw Here
 
-        //Test drawing from the Assets.
-        graphics.drawImage(Assets.dirt, position, position, null);
+        graphics.drawImage(Assets.player,0,0,128,128,null);
+        graphics.drawImage(Assets.dirt,128,128,128,128,null);
 
-        // End Drawing !!
+        // End Drawing
 
         graphics.dispose();
         bufferStrategy.show();
     }
+
 
     /**
      * The method will start the thread. Initialize the thread object.
      * When we call thread.start(); the thread will call the run() method.
      */
     public synchronized void start() {
-        // Only if the game is not running
         if (running) {
             return;
         }
@@ -164,11 +168,11 @@ public class Engine implements Runnable {
         thread.start();
     }
 
+
     /**
      * The method will stop the thread thread.join gives exception
      */
     public synchronized void stop() {
-        // Only if the game is running
         if (running) {
             running = false;
             try {

@@ -1,5 +1,6 @@
 package Display;
 
+import Main.Engine;
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,9 +16,14 @@ public class Display {
     public static final int WINDOW_WIDTH = 850;
     public static final int WINDOW_HEIGHT = 950;
 
+
+    /**
+     * Constructor
+     */
     public Display(){
         createDisplay();
     }
+
 
     /**
      * This is the method that will take care
@@ -59,8 +65,9 @@ public class Display {
         // Prints Info to the console
         // =====================
         System.out.printf("Opened Display (%d x %d) \n",WINDOW_WIDTH,WINDOW_HEIGHT);
-        System.out.println("Canvas Created");
+        System.out.println("Canvas Created\n===============");
     }
+
 
     /**
      * Returns the Canvas object which we need
@@ -68,5 +75,13 @@ public class Display {
      */
     public Canvas getCanvas(){
         return this.mainCanvas;
+    }
+
+
+    /**
+     * This method will clear the screen
+     */
+    public static void clearScreen(){
+        Engine.graphics.clearRect(0, 0, Display.WINDOW_WIDTH, Display.WINDOW_HEIGHT);
     }
 }
