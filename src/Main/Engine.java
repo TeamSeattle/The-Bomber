@@ -31,6 +31,8 @@ package Main;
 
 import Display.Display;
 import Graphics.Assets;
+import States.*;
+
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -52,6 +54,10 @@ public class Engine implements Runnable {
     public BufferStrategy bufferStrategy;
     public static Graphics graphics;
 
+    // All the states
+    private State gameState;
+    private State menuState;
+    private State deadState;
 
     /**
      * Constructor
@@ -111,8 +117,24 @@ public class Engine implements Runnable {
      * Setup everything we need for the game
      */
     private void initialize() {
+
+        // Initialize display
         display = new Display();
+
+        // Initialize assets
         Assets.initialize();
+
+        // Initialize states
+        gameState = new GameState();
+        menuState = new MenuState();
+        deadState = new DeadState();
+
+        // Set our game to a state
+        StateManager.setCurrentState(gameState);
+
+        // Print info for debugging
+        System.out.println("Current State is: " + StateManager.getCurrentState().name);
+        System.out.println("===============");
     }
 
 
@@ -121,7 +143,9 @@ public class Engine implements Runnable {
      * It updates everything (values, object etc.)
      */
     private void tick() {
-
+        if (StateManager.getCurrentState() != null){
+            StateManager.getCurrentState().tick();
+        }
     }
 
 
@@ -145,8 +169,9 @@ public class Engine implements Runnable {
 
         // Draw Here
 
-        graphics.drawImage(Assets.player,0,0,128,128,null);
-        graphics.drawImage(Assets.dirt,128,128,128,128,null);
+        if (StateManager.getCurrentState() != null){
+            StateManager.getCurrentState().render(graphics);
+        }
 
         // End Drawing
 
