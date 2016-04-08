@@ -39,21 +39,15 @@ import java.awt.image.BufferStrategy;
 // This class will be the main in our game, it will handle.
 public class Engine implements Runnable {
 
-
     // Properties that we will use
     private Display display;
     private Thread thread;
     private static final int FRAMES_PER_SECOND = 120;
-
-
     // This boolean will regulate the GAME LOOP
     private boolean running = false;
-
-
     // Properties for rendering
     public BufferStrategy bufferStrategy;
     public static Graphics graphics;
-
     // All the states
     private State gameState;
     private State menuState;
@@ -128,11 +122,9 @@ public class Engine implements Runnable {
         gameState = new GameState();
         menuState = new MenuState();
         deadState = new DeadState();
-
-        // Set our game to a state
         StateManager.setCurrentState(gameState);
 
-        // Print info for debugging
+        // Print info
         System.out.println("Current State is: " + StateManager.getCurrentState().name);
         System.out.println("===============");
     }

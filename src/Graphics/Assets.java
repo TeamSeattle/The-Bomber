@@ -1,31 +1,196 @@
 package Graphics;
 
+import Utilities.Utilities;
+
 import java.awt.image.BufferedImage;
 
 // In assets is any image, sound or peace of a music
 public class Assets {
 
     // Width and height of the images
-    private static final int IMAGE_WIDTH = 128;
-    private static final int IMAGE_HEIGHT = 128;
+    public static final int IMAGE_WIDTH = 128;
+    public static final int IMAGE_HEIGHT = 128;
 
-    // Assets
-    public static BufferedImage player;
-    public static BufferedImage dirt;
-    public static BufferedImage grass;
-    public static BufferedImage stone;
-    public static BufferedImage tree;
+    // BROWN ASSETS
+    public static BufferedImage brown_solid;
+    public static BufferedImage brown_pattern_1;
+    public static BufferedImage brown_pattern_2;
+    public static BufferedImage brown_land_left;
+    public static BufferedImage brown_land_middle;
+    public static BufferedImage brown_land_right;
+    public static BufferedImage brown_land_small;
+    public static BufferedImage brown_platform_small;
+    public static BufferedImage brown_platform_big;
+
+    // YELLOW ASSETS
+    public static BufferedImage yellow_solid;
+    public static BufferedImage yellow_pattern_1;
+    public static BufferedImage yellow_pattern_2;
+    public static BufferedImage yellow_land_left;
+    public static BufferedImage yellow_land_middle;
+    public static BufferedImage yellow_land_right;
+    public static BufferedImage yellow_land_small;
+    public static BufferedImage yellow_platform_small;
+    public static BufferedImage yellow_platform_big;
+
+    // BLUE ASSETS
+    public static BufferedImage blue_solid;
+    public static BufferedImage blue_pattern_1;
+    public static BufferedImage blue_pattern_2;
+    public static BufferedImage blue_land_left;
+    public static BufferedImage blue_land_middle;
+    public static BufferedImage blue_land_right;
+    public static BufferedImage blue_land_small;
+    public static BufferedImage blue_platform_small;
+    public static BufferedImage blue_platform_big;
+
+    // GREEN ASSETS
+    public static BufferedImage green_solid;
+    public static BufferedImage green_pattern_1;
+    public static BufferedImage green_pattern_2;
+    public static BufferedImage green_land_left;
+    public static BufferedImage green_land_middle;
+    public static BufferedImage green_land_right;
+    public static BufferedImage green_land_small;
+    public static BufferedImage green_platform_small;
+    public static BufferedImage green_platform_big;
+
+    // PLANTS RED
+    public static BufferedImage plat_red_1;
+    public static BufferedImage plat_red_2;
+    public static BufferedImage plat_red_3;
+    public static BufferedImage plat_red_4;
+    public static BufferedImage plat_red_5;
+    public static BufferedImage plat_red_6;
+    // PLANTS GREEN
+    public static BufferedImage plat_green_1;
+    public static BufferedImage plat_green_2;
+    public static BufferedImage plat_green_3;
+    public static BufferedImage plat_green_4;
+    public static BufferedImage plat_green_5;
+    public static BufferedImage plat_green_6;
+    // PLANTS BLUE
+    public static BufferedImage plat_blue_1;
+    public static BufferedImage plat_blue_2;
+    public static BufferedImage plat_blue_3;
+    public static BufferedImage plat_blue_4;
+    public static BufferedImage plat_blue_5;
+    public static BufferedImage plat_blue_6;
+    // PLANTS GRAY
+    public static BufferedImage plat_gray_1;
+    public static BufferedImage plat_gray_2;
+    public static BufferedImage plat_gray_3;
+    public static BufferedImage plat_gray_4;
+    public static BufferedImage plat_gray_5;
+    public static BufferedImage plat_gray_6;
+
+    // WATER
+    public static BufferedImage water;
+
+    // ITEMS
+    public static BufferedImage aura;
+    public static BufferedImage health;
+    public static BufferedImage speed;
+    public static BufferedImage armor;
+
 
     /**
      * Its going to load everything in our game, and store in RAM
      */
     public static void initialize() {
-        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/assets.png"));
 
-        player = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-        dirt = sheet.crop(IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-        grass = sheet.crop(IMAGE_WIDTH * 2, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-        stone = sheet.crop(IMAGE_WIDTH * 3, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-        tree = sheet.crop(IMAGE_WIDTH * 4, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets.png"));
+
+        // BROWN ASSETS
+        brown_solid = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_pattern_1 = sheet.crop(0, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_pattern_2 = sheet.crop(0, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_land_left = sheet.crop(IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_land_middle = sheet.crop(IMAGE_WIDTH * 2, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_land_right = sheet.crop(IMAGE_WIDTH * 3, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_land_small = sheet.crop(IMAGE_WIDTH * 4, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        brown_platform_big = sheet.crop(IMAGE_WIDTH * 5, 0, IMAGE_WIDTH * 3, IMAGE_HEIGHT);
+        brown_platform_small = sheet.crop(IMAGE_WIDTH * 8, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+        // YELLOW ASSETS
+        yellow_solid = sheet.crop(0, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_pattern_1 = sheet.crop(0, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_pattern_2 = sheet.crop(0, IMAGE_HEIGHT * 5, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_land_left = sheet.crop(IMAGE_WIDTH, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_land_middle = sheet.crop(IMAGE_WIDTH * 2, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_land_right = sheet.crop(IMAGE_WIDTH * 3, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_land_small = sheet.crop(IMAGE_WIDTH * 4, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        yellow_platform_big = sheet.crop(IMAGE_WIDTH * 5, IMAGE_HEIGHT * 3, IMAGE_WIDTH * 3, IMAGE_HEIGHT);
+        yellow_platform_small = sheet.crop(IMAGE_WIDTH * 8, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+        // BLUE ASSETS
+        blue_solid = sheet.crop(0, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_pattern_1 = sheet.crop(0, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_pattern_2 = sheet.crop(0, IMAGE_HEIGHT * 8, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_land_left = sheet.crop(IMAGE_WIDTH, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_land_middle = sheet.crop(IMAGE_WIDTH * 2, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_land_right = sheet.crop(IMAGE_WIDTH * 3, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_land_small = sheet.crop(IMAGE_WIDTH * 4, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        blue_platform_big = sheet.crop(IMAGE_WIDTH * 5, IMAGE_HEIGHT * 6, IMAGE_WIDTH * 3, IMAGE_HEIGHT);
+        blue_platform_small = sheet.crop(IMAGE_WIDTH * 8, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+        // GREEN ASSETS
+        green_solid = sheet.crop(0, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_pattern_1 = sheet.crop(0, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_pattern_2 = sheet.crop(0, IMAGE_HEIGHT * 11, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_land_left = sheet.crop(IMAGE_WIDTH, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_land_middle = sheet.crop(IMAGE_WIDTH * 2, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_land_right = sheet.crop(IMAGE_WIDTH * 3, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_land_small = sheet.crop(IMAGE_WIDTH * 4, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+        green_platform_big = sheet.crop(IMAGE_WIDTH * 5, IMAGE_HEIGHT * 9, IMAGE_WIDTH * 3, IMAGE_HEIGHT);
+        green_platform_small = sheet.crop(IMAGE_WIDTH * 8, IMAGE_HEIGHT * 9, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+        // PLANTS RED
+        plat_red_1 = sheet.crop(IMAGE_WIDTH * 9, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_red_2 = sheet.crop(IMAGE_WIDTH * 10, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_red_3 = sheet.crop(IMAGE_WIDTH * 11, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_red_4 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_red_5 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_red_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT, IMAGE_WIDTH, IMAGE_HEIGHT);
+        // PLANTS GREEN
+        plat_green_1 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_green_2 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_green_3 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_green_4 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_green_5 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_green_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
+        // PLANTS GREEN
+        plat_blue_1 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_blue_2 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_blue_3 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_blue_4 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 5, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_blue_5 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 5, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_blue_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 5, IMAGE_WIDTH, IMAGE_HEIGHT);
+        // PLANTS GRAY
+        plat_gray_1 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_gray_2 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_gray_3 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_gray_4 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_gray_5 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
+        plat_gray_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
+
+        // WATER
+        water = sheet.crop(IMAGE_WIDTH * 12,IMAGE_HEIGHT * 10,IMAGE_WIDTH,IMAGE_HEIGHT * 2);
+
+        // ITEMS and Scale to 64x64
+        aura = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
+        aura = Utilities.scale(aura,0.5,0.5);
+
+        health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
+        health = Utilities.scale(health,0.5,0.5);
+
+        speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
+        speed = Utilities.scale(speed,0.5,0.5);
+
+        armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
+        armor = Utilities.scale(armor,0.5,0.5);
+
+        // PRINT INFO
+        System.out.println("All assets loaded successfully!");
     }
 }
