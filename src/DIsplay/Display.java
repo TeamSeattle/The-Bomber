@@ -58,6 +58,7 @@ public class Display {
         mainCanvas.setPreferredSize(windowDimension);
         mainCanvas.setMaximumSize(windowDimension);
         mainCanvas.setMinimumSize(windowDimension);
+        mainCanvas.setFocusable(false);
         // Add the canvas to the JFrame
         mainFrame.add(mainCanvas);
         mainFrame.pack();
@@ -77,6 +78,10 @@ public class Display {
         return this.mainCanvas;
     }
 
+
+    public JFrame getFrame(){
+        return  this.mainFrame;
+    }
 
     /**
      * This method will clear the screen

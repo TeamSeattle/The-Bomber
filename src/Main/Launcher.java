@@ -1,6 +1,6 @@
 package Main;
 
-public class Launcher {
+public class  Launcher {
 
     /**
      * This will be main method that will be the starting point

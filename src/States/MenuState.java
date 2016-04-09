@@ -12,6 +12,8 @@
 
 package States;
 
+import Main.Engine;
+
 import java.awt.*;
 
 public class MenuState extends State {
@@ -19,7 +21,8 @@ public class MenuState extends State {
     /**
      * Constructor
      */
-    public MenuState() {
+    public MenuState(Engine engine) {
+        super(engine);
         name = "Menus";
     }
 

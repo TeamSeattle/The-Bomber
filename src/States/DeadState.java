@@ -11,6 +11,8 @@
 
 package States;
 
+import Main.Engine;
+
 import java.awt.*;
 
 public class DeadState extends State{
@@ -18,7 +20,8 @@ public class DeadState extends State{
     /**
      * Constructor
      */
-    public DeadState(){
+    public DeadState(Engine engine){
+        super(engine);
         name = "Dead";
     }
 

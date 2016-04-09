@@ -31,9 +31,11 @@ package Main;
 
 import Display.Display;
 import Graphics.Assets;
+import Input.KeyManager;
 import States.*;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 
 // This class will be the main in our game, it will handle.
@@ -53,11 +55,15 @@ public class Engine implements Runnable {
     private State menuState;
     private State deadState;
 
+    //Input
+    private KeyManager keyManager;
+
+
     /**
      * Constructor
      */
     public Engine() {
-
+        keyManager= new KeyManager();
     }
 
 
@@ -115,13 +121,15 @@ public class Engine implements Runnable {
         // Initialize display
         display = new Display();
 
+        //Initialize key manager
+        display.getFrame().addKeyListener(keyManager);
         // Initialize assets
         Assets.initialize();
 
         // Initialize states
-        gameState = new GameState();
-        menuState = new MenuState();
-        deadState = new DeadState();
+        gameState = new GameState(this);
+        menuState = new MenuState(this);
+        deadState = new DeadState(this);
         StateManager.setCurrentState(gameState);
 
         // Print info
@@ -135,6 +143,8 @@ public class Engine implements Runnable {
      * It updates everything (values, object etc.)
      */
     private void tick() {
+        keyManager.tick();
+
         if (StateManager.getCurrentState() != null){
             StateManager.getCurrentState().tick();
         }
@@ -171,6 +181,9 @@ public class Engine implements Runnable {
         bufferStrategy.show();
     }
 
+    public KeyManager getKeyManager(){
+        return keyManager;
+    }
 
     /**
      * The method will start the thread. Initialize the thread object.

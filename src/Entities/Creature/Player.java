@@ -3,15 +3,24 @@ package Entities.Creature;
 import java.awt.*;
 
 import Graphics.Assets;
+import Main.Engine;
 
 public class Player extends Creature {
-    public Player(float x, float y) {
+
+    private Engine engine;
+
+    public Player(Engine engine,float x, float y) {
         super(x, y);
+        this.engine=engine;
     }
 
     @Override
     public void tick() {
-
+        if (engine.getKeyManager().left){
+            x-=speed;
+        }if (engine.getKeyManager().right){
+            x+=speed;
+        }
     }
 
     @Override

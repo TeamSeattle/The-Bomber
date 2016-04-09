@@ -13,6 +13,7 @@ package States;
 import Display.Display;
 import Entities.Creature.Player;
 import Graphics.Assets;
+import Main.Engine;
 
 import java.awt.*;
 
@@ -25,11 +26,12 @@ public class GameState extends State {
     /**
      * Constructor
      */
-    public GameState() {
+    public GameState(Engine engine) {
+        super(engine);
         name = "Game";
 
-        // Create a player Gosho
-        player = new Player(1, 1);
+        // Create a player player
+        player = new Player(engine,500, 500);
     }
 
     @Override
