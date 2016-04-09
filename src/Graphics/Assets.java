@@ -93,6 +93,11 @@ public class Assets {
     public static BufferedImage speed;
     public static BufferedImage armor;
 
+    // BACKGROUNDS
+    public static BufferedImage set2_background;
+    public static BufferedImage set2_hills;
+    public static BufferedImage set2_tiles;
+
 
     /**
      * Its going to load everything in our game, and store in RAM
@@ -175,20 +180,25 @@ public class Assets {
         plat_gray_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
 
         // WATER
-        water = sheet.crop(IMAGE_WIDTH * 12,IMAGE_HEIGHT * 10,IMAGE_WIDTH,IMAGE_HEIGHT * 2);
+        water = sheet.crop(IMAGE_WIDTH * 12, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
 
         // ITEMS and Scale to 64x64
-        aura = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
-        aura = Utilities.scale(aura,0.5,0.5);
+        aura = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        aura = Utilities.scale(aura, 0.5, 0.5);
 
-        health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
-        health = Utilities.scale(health,0.5,0.5);
+        health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        health = Utilities.scale(health, 0.5, 0.5);
 
-        speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
-        speed = Utilities.scale(speed,0.5,0.5);
+        speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        speed = Utilities.scale(speed, 0.5, 0.5);
 
-        armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2,IMAGE_WIDTH,IMAGE_HEIGHT);
-        armor = Utilities.scale(armor,0.5,0.5);
+        armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
+        armor = Utilities.scale(armor, 0.5, 0.5);
+
+        // BACKGROUNDS
+        set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");
+        set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
+        set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
 
         // PRINT INFO
         System.out.println("All assets loaded successfully!");

@@ -1,6 +1,7 @@
 package Entities.Creature;
 
 import java.awt.*;
+
 import Graphics.Assets;
 
 public class Player extends Creature {
@@ -16,6 +17,6 @@ public class Player extends Creature {
     @Override
     public void render(Graphics graphics) {
         //Just use an existing Asset to image the player. When we decide, will change the image.
-        graphics.drawImage(Assets.aura,(int) x, (int) y, null);
+        graphics.drawImage(Assets.aura, (int) x, (int) y, null);
     }
 }
