@@ -184,16 +184,16 @@ public class Assets {
 
         // ITEMS and Scale to 64x64
         aura = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        aura = Utilities.scale(aura, 0.5, 0.5);
+        // aura = Utilities.scale(aura, 0.5, 0.5);
 
         health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        health = Utilities.scale(health, 0.5, 0.5);
+        // health = Utilities.scale(health, 0.5, 0.5);
 
         speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        speed = Utilities.scale(speed, 0.5, 0.5);
+        // speed = Utilities.scale(speed, 0.5, 0.5);
 
         armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        armor = Utilities.scale(armor, 0.5, 0.5);
+        // armor = Utilities.scale(armor, 0.5, 0.5);
 
         // BACKGROUNDS
         set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");

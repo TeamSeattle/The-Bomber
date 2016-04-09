@@ -13,6 +13,7 @@ package States;
 import Display.Display;
 import Entities.Creature.Player;
 import Graphics.Assets;
+import Input.KeyManager;
 import Main.Engine;
 
 import java.awt.*;
@@ -31,25 +32,31 @@ public class GameState extends State {
         name = "Game";
 
         // Create a player player
-        player = new Player(engine,500, 500);
+        player = new Player(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 11 + 18);
     }
+
+    int a = 0;
 
     @Override
     public void tick() {
+        if (KeyManager.escape && a > 20) {
+            StateManager.setCurrentState(Engine.menuState);
+            System.out.println("SWITCHED STATE : MenuState");
+            a = 0;
+        }
         player.tick();
+        a++;
     }
 
     int position = 0;
+
     @Override
     public void render(Graphics graphics) {
 
         // TEST CODE
         graphics.drawImage(Assets.set2_background, 0, 0, Display.WINDOW_WIDTH, Assets.set2_background.getHeight() + 300, null);
         graphics.drawImage(Assets.set2_hills, 0, 0, Display.WINDOW_WIDTH, Assets.set2_background.getHeight() + 300, null);
-        graphics.drawImage(Assets.set2_tiles,0, 0, Display.WINDOW_WIDTH, Assets.set2_background.getHeight() + 200, null);
-
-        //Test the player drawing.
-        player.render(graphics);
+        graphics.drawImage(Assets.set2_tiles, 0, 0, Display.WINDOW_WIDTH, Assets.set2_background.getHeight() + 200, null);
 
         // WORLD TEST
         graphics.drawImage(Assets.blue_land_left, 0, Assets.IMAGE_HEIGHT * 12, null);
@@ -77,7 +84,7 @@ public class GameState extends State {
         graphics.drawImage(Assets.blue_land_middle, Assets.IMAGE_WIDTH * 10, Assets.IMAGE_HEIGHT * 14, null);
         graphics.drawImage(Assets.blue_land_right, Assets.IMAGE_WIDTH * 11, Assets.IMAGE_HEIGHT * 14, null);
 
-        if (position < -128){
+        if (position < -128) {
             position = 0;
         }
 
@@ -95,5 +102,8 @@ public class GameState extends State {
         graphics.drawImage(Assets.plat_gray_5, Assets.IMAGE_WIDTH * 10, Assets.IMAGE_HEIGHT * 11, null);
 
         graphics.drawImage(Assets.plat_gray_6, Assets.IMAGE_WIDTH * 10, Assets.IMAGE_HEIGHT * 13, null);
+
+        //Test the player drawing.
+        player.render(graphics);
     }
 }

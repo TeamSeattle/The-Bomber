@@ -51,10 +51,9 @@ public class Engine implements Runnable {
     public BufferStrategy bufferStrategy;
     public static Graphics graphics;
     // All the states
-    private State gameState;
-    private State menuState;
-    private State deadState;
-
+    public static State gameState;
+    public static State menuState;
+    public static State deadState;
     //Input
     private KeyManager keyManager;
 
@@ -63,7 +62,7 @@ public class Engine implements Runnable {
      * Constructor
      */
     public Engine() {
-        keyManager= new KeyManager();
+        keyManager = new KeyManager();
     }
 
 
@@ -130,7 +129,7 @@ public class Engine implements Runnable {
         gameState = new GameState(this);
         menuState = new MenuState(this);
         deadState = new DeadState(this);
-        StateManager.setCurrentState(gameState);
+        StateManager.setCurrentState(menuState);
 
         // Print info
         System.out.println("Current State is: " + StateManager.getCurrentState().name);
@@ -141,11 +140,12 @@ public class Engine implements Runnable {
     /**
      * This method is called every frame
      * It updates everything (values, object etc.)
+     * + keyManager
      */
     private void tick() {
         keyManager.tick();
 
-        if (StateManager.getCurrentState() != null){
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().tick();
         }
     }
@@ -171,7 +171,7 @@ public class Engine implements Runnable {
 
         // Draw Here
 
-        if (StateManager.getCurrentState() != null){
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().render(graphics);
         }
 
@@ -181,7 +181,7 @@ public class Engine implements Runnable {
         bufferStrategy.show();
     }
 
-    public KeyManager getKeyManager(){
+    public KeyManager getKeyManager() {
         return keyManager;
     }
 
@@ -213,5 +213,17 @@ public class Engine implements Runnable {
                 e.printStackTrace();
             }
         }
+    }
+
+    public State getGameState() {
+        return gameState;
+    }
+
+    public State getMenuState() {
+        return menuState;
+    }
+
+    public State getDeadState() {
+        return deadState;
     }
 }

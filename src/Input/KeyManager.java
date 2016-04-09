@@ -3,19 +3,21 @@ package Input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KeyManager implements KeyListener{
+public class KeyManager implements KeyListener {
 
     private boolean[] keys;
-    public boolean left,right;
+    public static boolean left;
+    public static boolean right;
+    public static boolean escape;
 
-
-    public KeyManager(){
-        keys=new boolean[256];
+    public KeyManager() {
+        keys = new boolean[256];
     }
 
-    public void tick(){
-        left = keys[KeyEvent.VK_LEFT];
-        right = keys[KeyEvent.VK_RIGHT];
+    public void tick() {
+        left = keys[KeyEvent.VK_LEFT] | keys[KeyEvent.VK_A];
+        right = keys[KeyEvent.VK_RIGHT] | keys[KeyEvent.VK_D];
+        escape = keys[KeyEvent.VK_ESCAPE];
     }
 
     @Override
@@ -25,11 +27,11 @@ public class KeyManager implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent e) {
-        keys[e.getKeyCode()]=true;
+        keys[e.getKeyCode()] = true;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        keys[e.getKeyCode()]=false;
+        keys[e.getKeyCode()] = false;
     }
 }
