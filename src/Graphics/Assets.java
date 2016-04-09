@@ -8,8 +8,8 @@ import java.awt.image.BufferedImage;
 public class Assets {
 
     // Width and height of the images
-    public static final int IMAGE_WIDTH = 128;
-    public static final int IMAGE_HEIGHT = 128;
+    public static final int IMAGE_WIDTH = 64;
+    public static final int IMAGE_HEIGHT = 64;
 
     // BROWN ASSETS
     public static BufferedImage brown_solid;
@@ -99,7 +99,7 @@ public class Assets {
      */
     public static void initialize() {
 
-        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets.png"));
+        SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets_64x64.png"));
 
         // BROWN ASSETS
         brown_solid = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
