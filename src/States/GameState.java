@@ -10,22 +10,29 @@
 
 package States;
 
+import Entities.Creature.Player;
 import Graphics.Assets;
 
 import java.awt.*;
 
 public class GameState extends State {
 
+
+    //Create a player with name "player",for the test :)
+    private Player player;
     /**
      * Constructor
      */
     public GameState() {
         name = "Game";
+
+        // Create a player Gosho
+        player=new Player(500,500);
     }
 
     @Override
     public void tick() {
-
+        player.tick();
     }
 
     int i = 0;
@@ -33,7 +40,8 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics graphics) {
-
+        //Test the player drawing.
+        player.render(graphics);
         // TEST CODE
         graphics.drawImage(Assets.blue_solid,0,0,1000,1000,null);
 

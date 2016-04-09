@@ -11,6 +11,7 @@ public class SpriteSheet {
      * It takes a buffered image with encoding of 64 bits
      */
     public SpriteSheet(BufferedImage sheet) {
+
         this.sheet = sheet;
     }
 
@@ -18,6 +19,7 @@ public class SpriteSheet {
      * We load the sprite sheet but we want to crop a part of it.
      */
     public BufferedImage crop(int x, int y, int width, int height) {
+
         return sheet.getSubimage(x, y, width, height);
     }
 }

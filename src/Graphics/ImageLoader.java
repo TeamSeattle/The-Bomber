@@ -13,7 +13,7 @@ public class ImageLoader {
         try {
             return ImageIO.read(ImageLoader.class.getResource(path));
         } catch (IOException e) {
-            System.out.println("Could find image!");
+            System.out.println("Couldn't find image!");
             e.printStackTrace();
             System.exit(1);
         }
