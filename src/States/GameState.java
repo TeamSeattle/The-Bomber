@@ -10,9 +10,9 @@
 
 package States;
 
-import java.awt.*;
-
 import Graphics.Assets;
+
+import java.awt.*;
 
 public class GameState extends State {
 

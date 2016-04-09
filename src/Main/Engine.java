@@ -42,7 +42,7 @@ public class Engine implements Runnable {
     // Properties that we will use
     private Display display;
     private Thread thread;
-    private static final int FRAMES_PER_SECOND = 120;
+    private static final int FRAMES_PER_SECOND = 60;
     // This boolean will regulate the GAME LOOP
     private boolean running = false;
     // Properties for rendering
