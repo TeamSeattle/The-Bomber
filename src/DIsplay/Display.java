@@ -14,7 +14,7 @@ public class Display {
     // Width and the height are in pixels
     public static final String GAME_NAME = "The Bomber";
     public static final int WINDOW_WIDTH = 896;
-    public static final int WINDOW_HEIGHT = 1024;
+    public static final int WINDOW_HEIGHT = 960;
 
 
     /**

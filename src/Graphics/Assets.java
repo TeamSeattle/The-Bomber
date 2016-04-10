@@ -187,7 +187,7 @@ public class Assets {
         // aura = Utilities.scale(aura, 0.5, 0.5);
 
         health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        // health = Utilities.scale(health, 0.5, 0.5);
+        health = Utilities.scale(health, 2, 2);
 
         speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
         // speed = Utilities.scale(speed, 0.5, 0.5);

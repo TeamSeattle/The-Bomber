@@ -25,7 +25,7 @@ public class Utilities {
     public static BufferedImage scale(BufferedImage image,double xScale, double yScale) {
         AffineTransform at = new AffineTransform();
         at.scale(xScale,yScale);
-        BufferedImage after = new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_4BYTE_ABGR);
+        BufferedImage after = new BufferedImage((int)(image.getWidth() * xScale),(int)(image.getHeight() * yScale),BufferedImage.TYPE_4BYTE_ABGR);
         AffineTransformOp scaleOp = new AffineTransformOp(at, AffineTransformOp.TYPE_BILINEAR);
         return scaleOp.filter(image,after);
     }
