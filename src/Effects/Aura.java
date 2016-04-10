@@ -30,6 +30,7 @@ public class Aura {
 
     public void render(Graphics graphics , int x, int y){
         graphics.drawImage(Assets.armor,x + 32,y + 32,null);
+        graphics.drawString(time / 60 + "",x + 62,y + 70);
     }
 
     /**
