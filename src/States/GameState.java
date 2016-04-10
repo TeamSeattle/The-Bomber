@@ -105,6 +105,6 @@ public class GameState extends State {
 
         //Test the player drawing.
         player.render(graphics);
-        graphics.drawImage(Assets.yellow_platform_big,0,0,null);
+
     }
 }
