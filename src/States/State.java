@@ -20,6 +20,8 @@
 
 package States;
 
+import Main.Engine;
+
 import java.awt.*;
 
 public abstract class State {
@@ -27,6 +29,12 @@ public abstract class State {
     // Properties
     // Name is only for debugging
     public String name;
+
+    //Insert keyboard input
+    protected Engine engine;
+    public State(Engine engine){
+        this.engine=engine;
+    }
 
     // This are the methods that all the game states will must have
     public abstract void tick();
