@@ -7,7 +7,7 @@ import java.awt.*;
 public class Aura {
 
     private boolean isActive;
-    private int time = 300;
+    private int time = 540;
 
     /**
      * Constructor
@@ -24,12 +24,14 @@ public class Aura {
 
         if (time == 0) {
             isActive = false;
-            time = 300;
+            time = 540;
         }
     }
 
     public void render(Graphics graphics , int x, int y){
         graphics.drawImage(Assets.armor,x + 32,y + 32,null);
+        graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
+        graphics.drawString(time / 60 + 1 + "",x + 55,y + 32);
     }
 
     /**

@@ -39,6 +39,7 @@ public class GameState extends State {
 
     @Override
     public void tick() {
+
         if (KeyManager.escape && a > 20) {
             StateManager.setCurrentState(Engine.menuState);
             System.out.println("SWITCHED STATE : MenuState");
