@@ -11,8 +11,8 @@ Tiles:
     Blue    -> [20,28]
     Green   -> [30,38]
 
-Plats: // TODO
-    Brown   -> []
-    Yellow  -> []
-    Blue    -> []
-    Green   -> []
+Plants:
+    Red     -> [40,45]
+    Green   -> [50,55]
+    Blue    -> [60,65]
+    Gray    -> [70,75]

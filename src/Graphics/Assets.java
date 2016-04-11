@@ -164,7 +164,7 @@ public class Assets {
         plat_green_4 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
         plat_green_5 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
         plat_green_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 3, IMAGE_WIDTH, IMAGE_HEIGHT);
-        // PLANTS GREEN
+        // PLANTS BLUE
         plat_blue_1 = sheet.crop(IMAGE_WIDTH * 9, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
         plat_blue_2 = sheet.crop(IMAGE_WIDTH * 10, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
         plat_blue_3 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 4, IMAGE_WIDTH, IMAGE_HEIGHT);
