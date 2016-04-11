@@ -1,0 +1,18 @@
+// ==
+This is the folder where all the tile classes will go
+
+Each tile has it's unique ID
+
+// === IDs
+
+Tiles:
+    Brown   -> [0,8]
+    Yellow  -> [10,18]
+    Blue    -> [20,28]
+    Green   -> [30,38]
+
+Plats: // TODO
+    Brown   -> []
+    Yellow  -> []
+    Blue    -> []
+    Green   -> []
