@@ -30,6 +30,7 @@ public class Aura {
 
     public void render(Graphics graphics , int x, int y){
         graphics.drawImage(Assets.armor,x + 32,y + 32,null);
+
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
         graphics.drawString(time / 60 + 1 + "",x + 55,y + 32);
     }

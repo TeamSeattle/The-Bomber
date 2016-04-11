@@ -106,5 +106,6 @@ public class GameState extends State {
 
         //Test the player drawing.
         player.render(graphics);
+
     }
 }
