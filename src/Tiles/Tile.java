@@ -1,12 +1,20 @@
 package Tiles;
 
+import Tiles.Backgrounds.Set2Background;
+import Tiles.Backgrounds.Set2Hills;
+import Tiles.Backgrounds.Set2Tiles;
 import Tiles.Blue.*;
 import Tiles.Brown.*;
 import Tiles.Green.*;
+import Tiles.Items.Armor;
+import Tiles.Items.Aura;
+import Tiles.Items.Health;
+import Tiles.Items.Speed;
 import Tiles.Plants.Blue.*;
 import Tiles.Plants.Gray.*;
 import Tiles.Plants.Green.*;
 import Tiles.Plants.Red.*;
+import Tiles.Water.Water;
 import Tiles.Yellow.*;
 
 import java.awt.*;
@@ -89,6 +97,19 @@ public class Tile {
     public static Tile plat_gray_5 = new PlatGray5(74);
     public static Tile plat_gray_6 = new PlatGray6(75);
 
+    //WATER
+    public static Tile water = new Water(80);
+
+    //ITEMS
+    public static Tile aura = new Aura(90);
+    public static Tile health = new Health(91);
+    public static Tile speed = new Speed(92);
+    public static Tile armor = new Armor(93);
+
+    //BACKGROUNDS
+    public static Tile set2_background= new Set2Background(100);
+    public static Tile set2_hills = new Set2Hills(101);
+    public static Tile set2_tiles = new Set2Tiles(102);
 
     //Class
     public static final int TILE_WIDTH = 64;

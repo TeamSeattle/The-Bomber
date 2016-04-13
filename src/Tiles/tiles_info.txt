@@ -16,3 +16,16 @@ Plants:
     Green   -> [50,55]
     Blue    -> [60,65]
     Gray    -> [70,75]
+
+Water: [80]
+
+Items:
+    Aura    -> [90]
+    Health  -> [91]
+    Speed   -> [92]
+    Armor   -> [93]
+
+Backgrounds:
+    Set2_Background -> [100]
+    Set2_Hills      -> [101]
+    Set2_Tiles      -> [102]
