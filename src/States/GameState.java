@@ -12,7 +12,7 @@ package States;
 
 import DIsplay.Display;
 import Entities.Creature.Controller;
-import Entities.Creature.Object;
+import Entities.Creature.Enemies;
 import Entities.Creature.Player;
 import Graphics.Assets;
 import Input.KeyManager;
@@ -26,7 +26,7 @@ public class GameState extends State {
     //Create a player with name "player",for the test :)
     private Player player;
     private Controller controller;
-    private Object enemy;
+    private Enemies enemy;
 
     /**
      * Constructor
@@ -37,7 +37,7 @@ public class GameState extends State {
 
         // Create a player player
         player = new Player(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
-        enemy = new Object(engine, Assets.IMAGE_WIDTH*6, Assets.IMAGE_HEIGHT*9 +33);
+        enemy = new Enemies(engine, Assets.IMAGE_WIDTH*6, Assets.IMAGE_HEIGHT*9 +33);
         controller = new Controller(this);
         controller.createEnemies(enemyCount);
     }

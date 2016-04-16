@@ -7,7 +7,7 @@ import Main.Engine;
 import java.awt.*;
 import java.util.Random;
 
-public class Object extends Entity {
+public class Enemies extends Entity {
     private Engine engine;
     private float x, y;
 
@@ -16,12 +16,12 @@ public class Object extends Entity {
     protected float speed = random.nextInt(5) + 1;
 
 
-    public Object(Engine engine, float x, float y) {
+    public Enemies(Engine engine, float x, float y) {
         super(x, y);
         this.engine = engine;
     }
 
-    public Object(float x, float y, Engine engine) {
+    public Enemies(float x, float y, Engine engine) {
         super(x, y);
         this.engine = engine;
     }

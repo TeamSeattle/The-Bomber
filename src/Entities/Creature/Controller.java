@@ -9,11 +9,11 @@ import java.util.Random;
 
 public class Controller {
 
-    private LinkedList<Object> e =  new LinkedList<Object>();
+    private LinkedList<Enemies> e =  new LinkedList<Enemies>();
 
 
     Random random = new Random();
-    private Object tempEnemy;
+    private Enemies tempEnemy;
 
     private Engine engine;
 
@@ -29,7 +29,7 @@ public class Controller {
 
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
-            addObject(new Object(random.nextInt(696),-200, engine));
+            addObject(new Enemies(random.nextInt(696),-200, engine));
         }
 
     }
@@ -57,10 +57,10 @@ public class Controller {
 
 
 
-    public void addObject (Object block){
+    public void addObject (Enemies block){
         e.add(block);
     }
-    public void removeObject(Object block){
+    public void removeObject(Enemies block){
         e.remove(block);
     }
 
