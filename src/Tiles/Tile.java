@@ -10,6 +10,7 @@ import Tiles.Items.Armor;
 import Tiles.Items.Aura;
 import Tiles.Items.Health;
 import Tiles.Items.Speed;
+import Tiles.Others.Empty;
 import Tiles.Plants.Blue.*;
 import Tiles.Plants.Gray.*;
 import Tiles.Plants.Green.*;
@@ -24,16 +25,19 @@ public class Tile {
     //Static stuff here, if array is not enough length change it.
     public static Tile[] tiles = new Tile[256];
 
+    // OTHER
+    public static Tile empty = new Empty(0);
+
     // BROWN TILES
-    public static Tile brown_solid = new BrownSolid(0);
-    public static Tile brown_pattern_1 = new BrownPattern1(1);
-    public static Tile brown_pattern_2 = new BrownPattern2(2);
-    public static Tile brown_land_left = new BrownLandLeft(3);
-    public static Tile brown_land_middle = new BrownLandMiddle(4);
-    public static Tile brown_land_right = new BrownLandRight(5);
-    public static Tile brown_land_small = new BrownLandSmall(6);
-    public static Tile brown_platform_big = new BrownPlatformBig(7);
-    public static Tile brown_platform_small = new BrownPlatformSmall(8);
+    public static Tile brown_solid = new BrownSolid(1);
+    public static Tile brown_pattern_1 = new BrownPattern1(2);
+    public static Tile brown_pattern_2 = new BrownPattern2(3);
+    public static Tile brown_land_left = new BrownLandLeft(4);
+    public static Tile brown_land_middle = new BrownLandMiddle(5);
+    public static Tile brown_land_right = new BrownLandRight(6);
+    public static Tile brown_land_small = new BrownLandSmall(7);
+    public static Tile brown_platform_big = new BrownPlatformBig(8);
+    public static Tile brown_platform_small = new BrownPlatformSmall(9);
     // YELLOW TILES
     public static Tile yellow_solid = new YellowSolid(10);
     public static Tile yellow_pattern_1 = new YellowPattern1(11);

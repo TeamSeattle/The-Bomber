@@ -99,6 +99,9 @@ public class Assets {
     public static BufferedImage set2_hills;
     public static BufferedImage set2_tiles;
 
+    // EMPTY ASSETS USED FOR ERRORS
+    public static BufferedImage empty;
+
 
     /**
      * Its going to load everything in our game, and store in RAM
@@ -197,6 +200,7 @@ public class Assets {
         // armor = Utilities.scale(armor, 0.5, 0.5);
 
         enemy = ImageLoader.loadImage("/textures/Enemies/enemyFloating_1.png");
+        empty = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 6,IMAGE_WIDTH,IMAGE_HEIGHT);
 
         // BACKGROUNDS
         set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");

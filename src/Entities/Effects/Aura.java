@@ -1,4 +1,4 @@
-package Effects;
+package Entities.Effects;
 
 import Graphics.Assets;
 

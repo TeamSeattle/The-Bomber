@@ -5,8 +5,11 @@ Each tile has it's unique ID
 
 // === IDs
 
+Others:
+    Empty   -> [0]
+
 Tiles:
-    Brown   -> [0,8]
+    Brown   -> [1,9]
     Yellow  -> [10,18]
     Blue    -> [20,28]
     Green   -> [30,38]

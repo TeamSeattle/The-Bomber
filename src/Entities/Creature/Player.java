@@ -1,7 +1,7 @@
 package Entities.Creature;
 
 import DIsplay.Display;
-import Effects.Aura;
+import Entities.Effects.Aura;
 import Entities.Entity;
 import Graphics.Assets;
 import Input.KeyManager;

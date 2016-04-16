@@ -1,5 +1,6 @@
 package Entities.Creature;
 
+import Entities.Enemies.Enemy;
 import Main.Engine;
 import States.GameState;
 
@@ -9,11 +10,10 @@ import java.util.Random;
 
 public class Controller {
 
-    private LinkedList<Enemies> e =  new LinkedList<Enemies>();
-
+    private LinkedList<Enemy> e =  new LinkedList<>();
 
     Random random = new Random();
-    private Enemies tempEnemy;
+    private Enemy tempEnemy;
 
     private Engine engine;
 
@@ -29,7 +29,7 @@ public class Controller {
 
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
-            addObject(new Enemies(random.nextInt(696),-200, engine));
+            addObject(new Enemy(random.nextInt(696),-200, engine));
         }
 
     }
@@ -57,10 +57,10 @@ public class Controller {
 
 
 
-    public void addObject (Enemies block){
+    public void addObject (Enemy block){
         e.add(block);
     }
-    public void removeObject(Enemies block){
+    public void removeObject(Enemy block){
         e.remove(block);
     }
 
