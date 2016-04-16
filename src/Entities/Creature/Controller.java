@@ -29,7 +29,7 @@ public class Controller {
 
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
-            addObject(new Enemies(random.nextInt(696),-200, engine));
+            addEnemies(new Enemies(random.nextInt(696),-200, engine));
         }
 
     }
@@ -57,10 +57,10 @@ public class Controller {
 
 
 
-    public void addObject (Enemies block){
+    public void addEnemies (Enemies block){
         e.add(block);
     }
-    public void removeObject(Enemies block){
+    public void removeEnemies (Enemies block){
         e.remove(block);
     }
 

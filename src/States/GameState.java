@@ -11,6 +11,8 @@
 package States;
 
 import DIsplay.Display;
+import Effects.ControllerHealth;
+import Effects.HealthObject;
 import Entities.Creature.Controller;
 import Entities.Creature.Enemies;
 import Entities.Creature.Player;
@@ -23,12 +25,16 @@ import java.awt.*;
 public class GameState extends State {
 
     private float enemyCount = 5;
+    private float healthObjectCount = 3;
     //Create a player with name "player",for the test :)
     private Player player;
     private Controller controller;
     private Enemies enemy;
+    private HealthObject healthObject;
+    private ControllerHealth controllerHealth;
 
-    /**
+
+   /**
      * Constructor
      */
     public GameState(Engine engine) {
@@ -38,8 +44,11 @@ public class GameState extends State {
         // Create a player player
         player = new Player(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
         enemy = new Enemies(engine, Assets.IMAGE_WIDTH*6, Assets.IMAGE_HEIGHT*9 +33);
+        healthObject = new HealthObject(engine, Assets.IMAGE_HEIGHT*6, Assets.IMAGE_HEIGHT*9 +33);
         controller = new Controller(this);
         controller.createEnemies(enemyCount);
+        controllerHealth = new ControllerHealth(this);
+        controllerHealth.createHealthObject(healthObjectCount);
     }
 
     int a = 0;
@@ -55,6 +64,8 @@ public class GameState extends State {
         player.tick();
         enemy.tick();
         controller.tick();
+        healthObject.tick();
+        controllerHealth.tick();
         a++;
     }
 
@@ -117,12 +128,14 @@ public class GameState extends State {
         player.render(graphics);
         enemy.render(graphics);
         controller.render(graphics);
+        healthObject.render(graphics);
+        controllerHealth.render(graphics);
     }
 
-        public float getObjectCount(){
+        public float getEnemiesCount(){
             return enemyCount;
         }
-        public  void setObjectCount(float enemyCount){
+        public  void setEnemiesCount(float enemyCount){
             this.enemyCount = enemyCount;
         }
 
