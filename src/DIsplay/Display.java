@@ -1,4 +1,4 @@
-package Display;
+package DIsplay;
 
 import Main.Engine;
 import javax.swing.*;

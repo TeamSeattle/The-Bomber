@@ -92,6 +92,7 @@ public class Assets {
     public static BufferedImage health;
     public static BufferedImage speed;
     public static BufferedImage armor;
+    public static BufferedImage enemy;
 
     // BACKGROUNDS
     public static BufferedImage set2_background;
@@ -194,6 +195,8 @@ public class Assets {
 
         armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
         // armor = Utilities.scale(armor, 0.5, 0.5);
+
+        enemy = ImageLoader.loadImage("/textures/Enemies/enemyFloating_1.png");
 
         // BACKGROUNDS
         set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");

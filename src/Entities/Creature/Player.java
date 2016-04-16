@@ -1,6 +1,6 @@
 package Entities.Creature;
 
-import Display.Display;
+import DIsplay.Display;
 import Effects.Aura;
 import Entities.Entity;
 import Graphics.Assets;
