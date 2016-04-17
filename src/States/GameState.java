@@ -28,7 +28,7 @@ public class GameState extends State {
     private float healthObjectCount = 3;
     //Create a player with name "player",for the test :)
     private Player player;
-    private EnemyController controller;
+    private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
     private Helping_Health healthObject;
@@ -42,25 +42,27 @@ public class GameState extends State {
         super(engine);
         name = "Game";
 
+        initialize();
+    }
+
+    private void initialize(){
+
         // Create world
         world = new World("level_1");
 
-        // Create a player player
-        player = new Player(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        // Create a player
+        player = new Player(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        enemy = new Enemy_level_1(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        healthObject = new Helping_Health(Assets.IMAGE_HEIGHT * 6, Assets.IMAGE_HEIGHT * 9 + 33);
 
-        enemy = new Enemy_level_1(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        enemyController = new EnemyController(this);
+        enemyController.createEnemies(enemyCount);
 
-        enemy = new Enemy_level_1(engine, Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
-        healthObject = new Helping_Health(engine, Assets.IMAGE_HEIGHT * 6, Assets.IMAGE_HEIGHT * 9 + 33);
-
-        controller = new EnemyController(this);
-        controller.createEnemies(enemyCount);
         controllerHealth = new HelpingController(this);
         controllerHealth.createHealthObject(healthObjectCount);
     }
 
     int a = 0;
-
     @Override
     public void tick() {
 
@@ -70,12 +72,19 @@ public class GameState extends State {
             a = 0;
         }
 
+        // WORLD + PLAYER
         world.tick();
-        enemy.tick();
         player.tick();
-        controller.tick();
+
+        // ENEMY
+        enemy.tick();
+        enemyController.tick();
+
+        // BONUSES
         healthObject.tick();
         controllerHealth.tick();
+
+        // System value
         a++;
     }
 
@@ -84,10 +93,11 @@ public class GameState extends State {
         //Test the player drawing.
         world.render(graphics);
         player.render(graphics);
-        enemy.render(graphics);
-        controller.render(graphics);
-        healthObject.render(graphics);
+
+        enemyController.render(graphics);
         controllerHealth.render(graphics);
+
+        graphics.drawImage(Assets.settings_button,830,0,null);
     }
 
 
@@ -102,7 +112,6 @@ public class GameState extends State {
     public void setEnemiesCount(float enemyCount) {
         this.enemyCount = enemyCount;
     }
-
 
     public void setObjectCount(float enemyCount) {
         this.enemyCount = enemyCount;

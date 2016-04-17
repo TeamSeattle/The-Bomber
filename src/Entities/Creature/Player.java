@@ -12,8 +12,6 @@ import java.awt.*;
 
 public class Player extends Entity {
 
-    private Engine engine;
-
     // Properties of the player
     protected int health;
     protected int maxHealth;
@@ -27,13 +25,11 @@ public class Player extends Entity {
     /**
      * Constructor
      *
-     * @param engine -> we need it for the keyManager
      * @param x      -> position on X axis
      * @param y      -> position on Y axis
      */
-    public Player(Engine engine, float x, float y) {
+    public Player(float x, float y) {
         super(x, y);
-        this.engine = engine;
 
         // Initialize properties
         health = 100;

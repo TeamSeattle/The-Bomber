@@ -8,9 +8,6 @@ import java.awt.*;
 import java.util.Random;
 
 public class Enemy_level_1 extends Entity {
-    private Engine engine;
-    private float x, y;
-
     Random random = new Random();
     private float speed = random.nextInt(5) + 1;
 
@@ -19,14 +16,8 @@ public class Enemy_level_1 extends Entity {
      * @param x -> X Position
      * @param y -> Y Position
      */
-    public Enemy_level_1(Engine engine, float x, float y) {
+    public Enemy_level_1(float x, float y) {
         super(x, y);
-        this.engine = engine;
-    }
-
-    public Enemy_level_1(float x, float y, Engine engine) {
-        super(x, y);
-        this.engine = engine;
     }
 
     @Override
@@ -37,14 +28,6 @@ public class Enemy_level_1 extends Entity {
     @Override
     public void render(Graphics graphics) {
         graphics.drawImage(Assets.enemy, (int) x, (int) y, null);
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
     }
 
     public float getY() {

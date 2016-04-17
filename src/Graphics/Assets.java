@@ -96,6 +96,7 @@ public class Assets {
     public static BufferedImage set2_hills;
     public static BufferedImage set2_tiles;
     public static BufferedImage realistic;
+    public static BufferedImage menu_background;
 
     // EMPTY ASSETS USED FOR ERRORS
     public static BufferedImage empty;
@@ -207,6 +208,8 @@ public class Assets {
         set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
         realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
+        menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
+        menu_background = Utilities.scale(menu_background, 1.2, 0.8);
 
         // PLAYER
         player = playerSheet.crop(128,128,64,64);

@@ -1,28 +1,19 @@
 package Entities.Helping;
 
 import Graphics.Assets;
-import Main.Engine;
-
 
 import java.awt.*;
 import java.util.Random;
 
 public class Helping_Health {
-    private Engine engine;
     private float x;
     private float y;
 
     Random random = new Random();
     protected float speed = random.nextInt(1) + 2;
 
-    public Helping_Health(Engine engine, float x, float y) {
+    public Helping_Health(float x, float y) {
         super();
-        this.engine = engine;
-    }
-
-    public Helping_Health(float x, float y, Engine engine) {
-        super();
-        this.engine = engine;
     }
 
     //  @Override
@@ -33,14 +24,6 @@ public class Helping_Health {
     //  @Override
     public void render(Graphics graphics) {
         graphics.drawImage(Assets.healthObject, (int) x, (int) y, null);
-    }
-
-    public Engine getEngine() {
-        return engine;
-    }
-
-    public void setEngine(Engine engine) {
-        this.engine = engine;
     }
 
     public float getY() {
