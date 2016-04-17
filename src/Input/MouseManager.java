@@ -1,9 +1,9 @@
 package Input;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class MouseManager implements MouseListener {
+public class MouseManager extends MouseAdapter {
 
     private int  x, y, click;
     public static int getX, getY, isClicked;
@@ -16,11 +16,6 @@ public class MouseManager implements MouseListener {
         isClicked = click;
         getX = x;
         getY = y;
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
     }
 
     @Override
@@ -39,12 +34,8 @@ public class MouseManager implements MouseListener {
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+    public void mouseMoved(MouseEvent e) {
+        x = e.getX();
+        y = e.getY();
     }
 }

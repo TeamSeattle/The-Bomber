@@ -124,6 +124,7 @@ public class Engine implements Runnable {
         //Initialize key manager
         display.getFrame().addKeyListener(keyManager);
         display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
         // Initialize assets
         Assets.initialize();
 
