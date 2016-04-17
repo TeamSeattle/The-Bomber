@@ -209,7 +209,7 @@ public class Assets {
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
         realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
         menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
-        menu_background = Utilities.scale(menu_background, 1.25, 1.25);
+        menu_background = Utilities.scale(menu_background, 1.25, 1.071);
 
         // PLAYER
         player = playerSheet.crop(128,128,64,64);
