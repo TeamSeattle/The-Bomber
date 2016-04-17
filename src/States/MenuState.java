@@ -13,9 +13,11 @@
 package States;
 
 import Input.KeyManager;
+import Input.MouseManager;
 import Main.Engine;
 
 import java.awt.*;
+import Graphics.Assets;
 
 public class MenuState extends State {
 
@@ -38,15 +40,37 @@ public class MenuState extends State {
             System.out.println("SWITCHED STATE : GameState");
             a = 0;
         }
+        if (MouseManager.isClicked == 1 &&
+                (MouseManager.getX > 347 && MouseManager.getX < 550) &&
+                (MouseManager.getY > 200 && MouseManager.getY < 270)) {
+            StateManager.setCurrentState(Engine.gameState);
+            a = 0;
+        }
+        if(MouseManager.isClicked == 1 &&
+                (MouseManager.getX > 347 && MouseManager.getX < 550) &&
+                (MouseManager.getY > 300 && MouseManager.getY < 370)) {
+            //NO SETTINGS MENU
+        }
+        if(MouseManager.isClicked == 1 &&
+                (MouseManager.getX > 347 && MouseManager.getX < 550) &&
+                (MouseManager.getY > 500 && MouseManager.getY < 570)) {
+            System.exit(0);
+        }
         a++;
     }
 
     @Override
     public void render(Graphics graphics) {
+
+        graphics.drawImage(Assets.start_menu_button,347,200,null);
+        graphics.drawImage(Assets.settings_menu_button,347,300,null);
+        graphics.drawImage(Assets.close_menu_button,347,500,null);
+
+        /*
         graphics.drawString("The Bomber", 420, 300);
         graphics.drawString("(Work In Progress)", 405, 320);
 
         graphics.drawString("PRESS ESCAPE TO RUN THE GAME", 350, 500);
-        graphics.drawString("AND TO GET BACK IN THE MENU", 360, 520);
+        graphics.drawString("AND TO GET BACK IN THE MENU", 360, 520);*/
     }
 }

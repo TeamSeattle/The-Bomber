@@ -32,6 +32,7 @@ package Main;
 import DIsplay.Display;
 import Graphics.Assets;
 import Input.KeyManager;
+import Input.MouseManager;
 import States.*;
 
 import java.awt.*;
@@ -55,6 +56,7 @@ public class Engine implements Runnable {
     public static State deadState;
     //Input
     private KeyManager keyManager;
+    private MouseManager mouseManager;
 
 
     /**
@@ -62,8 +64,8 @@ public class Engine implements Runnable {
      */
     public Engine() {
         keyManager = new KeyManager();
+        mouseManager = new MouseManager();
     }
-
 
     /**
      * This is the method that will be called
@@ -121,6 +123,7 @@ public class Engine implements Runnable {
 
         //Initialize key manager
         display.getFrame().addKeyListener(keyManager);
+        display.getCanvas().addMouseListener(mouseManager);
         // Initialize assets
         Assets.initialize();
 
@@ -143,7 +146,7 @@ public class Engine implements Runnable {
      */
     private void tick() {
         keyManager.tick();
-
+        mouseManager.tick();
         if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().tick();
         }
@@ -182,6 +185,9 @@ public class Engine implements Runnable {
 
     public KeyManager getKeyManager() {
         return keyManager;
+    }
+    public MouseManager getMouseManager() {
+        return mouseManager;
     }
 
     /**

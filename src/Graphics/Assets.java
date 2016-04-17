@@ -107,6 +107,11 @@ public class Assets {
     public static BufferedImage aura;
     public static BufferedImage speed;
 
+    // MENU
+    public static BufferedImage start_menu_button;
+    public static BufferedImage close_menu_button;
+    public static BufferedImage settings_menu_button;
+    public static BufferedImage settings_button;
 
     /**
      * Its going to load everything in our game, and store in RAM
@@ -214,6 +219,11 @@ public class Assets {
         aura = ImageLoader.loadImage("/textures/Player/aura.png");
         aura = Utilities.scale(aura, 0.5, 0.5);
 
+        // MENU
+        start_menu_button = ImageLoader.loadImage("/textures/Menu/Button_newgame.png");
+        close_menu_button = ImageLoader.loadImage("/textures/Menu/Button_exit.png");
+        settings_menu_button = ImageLoader.loadImage("/textures/menu/Button_settings.png");
+        settings_button = ImageLoader.loadImage("/textures/menu/settings-9.png");
 
         printInfo();
     }
