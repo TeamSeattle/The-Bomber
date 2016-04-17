@@ -115,8 +115,15 @@ public class Assets {
     public static BufferedImage close_menu_button_hover;
     public static BufferedImage settings_menu_button;
     public static BufferedImage settings_menu_button_hover;
+    public static BufferedImage unpause_menu_button;
+    public static BufferedImage unpause_menu_button_hover;
+    public static BufferedImage volumeon_menu_button;
+    public static BufferedImage volumeon_menu_button_hover;
+    public static BufferedImage volumeoff_menu_button;
+    public static BufferedImage volumeoff_menu_button_hover;
+
     // INGAME
-    public static BufferedImage settings_button;
+    public static BufferedImage in_game_settings;
 
     /**
      * Its going to load everything in our game, and store in RAM
@@ -230,11 +237,19 @@ public class Assets {
         start_menu_button = ImageLoader.loadImage("/textures/Menu/Button_newgame.png");
         close_menu_button = ImageLoader.loadImage("/textures/Menu/Button_exit.png");
         settings_menu_button = ImageLoader.loadImage("/textures/menu/Button_settings.png");
-        settings_button = ImageLoader.loadImage("/textures/menu/settings-9.png");
+        unpause_menu_button = ImageLoader.loadImage("/textures/Menu/Button_unpause.png");
+        volumeon_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_on.png");
+        volumeoff_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
+        in_game_settings = ImageLoader.loadImage("/textures/menu/settings-9.png");
+
         // HOVER
         start_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_newgame_hover.png");
         close_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_exit_hover.png");
         settings_menu_button_hover = ImageLoader.loadImage("/textures/menu/Button_settings_hover.png");
+        unpause_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_unpause_hover.png");
+        volumeon_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_on_hover.png");
+        volumeoff_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
+
         printInfo();
     }
 

@@ -97,7 +97,7 @@ public class GameState extends State {
         enemyController.render(graphics);
         controllerHealth.render(graphics);
 
-        graphics.drawImage(Assets.settings_button,830,0,null);
+        graphics.drawImage(Assets.in_game_settings,830,0,null);
     }
 
 
