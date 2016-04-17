@@ -50,12 +50,12 @@ public class MenuState extends State {
         }
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
-                (MouseManager.getY > 300 && MouseManager.getY < 370)) {
+                (MouseManager.getY > 300 && MouseManager.getY < 370) && a > 20) {
             // NO SETTINGS MENU
         }
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
-                (MouseManager.getY > 500 && MouseManager.getY < 570)) {
+                (MouseManager.getY > 500 && MouseManager.getY < 570) && a > 20) {
             System.exit(0);
         }
 

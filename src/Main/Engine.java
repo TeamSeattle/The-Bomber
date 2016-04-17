@@ -54,6 +54,7 @@ public class Engine implements Runnable {
     public static State gameState;
     public static State menuState;
     public static State deadState;
+    public static State pauseState;
     //Input
     private KeyManager keyManager;
     private MouseManager mouseManager;
@@ -132,6 +133,7 @@ public class Engine implements Runnable {
         gameState = new GameState(this);
         menuState = new MenuState(this);
         deadState = new DeadState(this);
+        pauseState = new PauseState(this);
         StateManager.setCurrentState(menuState);
 
         // Print info
@@ -231,5 +233,9 @@ public class Engine implements Runnable {
 
     public State getDeadState() {
         return deadState;
+    }
+
+    public State getPauseState() {
+        return pauseState;
     }
 }
