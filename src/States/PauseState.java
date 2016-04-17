@@ -48,9 +48,9 @@ public class PauseState extends State {
 
         if ((MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 200 && MouseManager.getY < 270)) {
-            graphics.drawImage(Assets.start_menu_button_hover, 347, 200, null);
+            graphics.drawImage(Assets.unpause_menu_button_hover, 347, 200, null);
         } else {
-            graphics.drawImage(Assets.start_menu_button, 347, 200, null);
+            graphics.drawImage(Assets.unpause_menu_button, 347, 200, null);
         }
 
         if ((MouseManager.getX > 347 && MouseManager.getX < 550) &&
