@@ -22,6 +22,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Tile {
+
     //Static stuff here, if array is not enough length change it.
     public static Tile[] tiles = new Tile[256];
 
@@ -115,14 +116,20 @@ public class Tile {
     public static Tile set2_hills = new Set2Hills(101);
     public static Tile set2_tiles = new Set2Tiles(102);
 
-    //Class
-    public static final int TILE_WIDTH = 64;
-    public static final int TILE_HEIGHT = 64;
+    // Class
+    // =====================================
+    // Properties
+    public static int TILE_WIDTH = 64;
+    public static int TILE_HEIGHT = 64;
 
     protected BufferedImage texture;
     protected final int id;
 
-
+    /**
+     * Constructor
+     * @param texture -> Buffered Image / Texture
+     * @param id -> Id of the tile
+     */
     public Tile(BufferedImage texture, int id) {
         this.texture = texture;
         this.id = id;
@@ -130,14 +137,32 @@ public class Tile {
         tiles[id] = this;
     }
 
+
+    /**
+     * This method is called every frame before a tile
+     * needs to be rendered
+     */
     public void tick() {
 
     }
 
+
+    /**
+     * This method is called every frame when a tile
+     * needs to be rendered
+     * @param graphics -> Graphics Object
+     * @param x -> X Position
+     * @param y -> Y Position
+     */
     public void render(Graphics graphics, int x, int y) {
         graphics.drawImage(texture, x, y, TILE_WIDTH, TILE_HEIGHT, null);
     }
 
+
+    /**
+     * Get the id of the tile
+     * @return -> int with Id
+     */
     public int getId() {
         return id;
     }

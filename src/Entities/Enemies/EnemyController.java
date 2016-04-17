@@ -1,6 +1,5 @@
-package Entities.Creature;
+package Entities.Enemies;
 
-import Entities.Enemies.Enemy;
 import Main.Engine;
 import States.GameState;
 
@@ -8,28 +7,29 @@ import java.awt.*;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Controller {
+public class EnemyController {
 
-    private LinkedList<Enemy> e =  new LinkedList<>();
+    private LinkedList<Enemy_level_1> e =  new LinkedList<>();
 
     Random random = new Random();
-    private Enemy tempEnemy;
+    private Enemy_level_1 tempEnemy;
 
     private Engine engine;
 
     private GameState gameState;
 
-    public Controller(Engine engine){
+    public EnemyController(Engine engine){
         this.engine = engine;
     }
 
-    public Controller(GameState gameState) {
+    public EnemyController(GameState gameState) {
         this.gameState = gameState;
     }
 
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
-            addObject(new Enemy(random.nextInt(696),-200, engine));
+            addObject(new Enemy_level_1(random.nextInt(696),-200, engine));
+            addEnemies(new Enemy_level_1(random.nextInt(696),-200, engine));
         }
 
     }
@@ -57,10 +57,16 @@ public class Controller {
 
 
 
-    public void addObject (Enemy block){
+    public void addObject (Enemy_level_1 block){
         e.add(block);
     }
-    public void removeObject(Enemy block){
+    public void removeObject(Enemy_level_1 block){
+
+    }
+    public void addEnemies (Enemy_level_1 block){
+        e.add(block);
+    }
+    public void removeEnemies (Enemy_level_1 block){
         e.remove(block);
     }
 

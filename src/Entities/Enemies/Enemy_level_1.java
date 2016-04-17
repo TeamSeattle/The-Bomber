@@ -7,24 +7,24 @@ import Main.Engine;
 import java.awt.*;
 import java.util.Random;
 
-public class Enemy extends Entity {
+public class Enemy_level_1 extends Entity {
     private Engine engine;
     private float x, y;
 
     Random random = new Random();
-    protected float speed = random.nextInt(5) + 1;
+    private float speed = random.nextInt(5) + 1;
 
     /**
      * Constructor
      * @param x -> X Position
      * @param y -> Y Position
      */
-    public Enemy(Engine engine, float x, float y) {
+    public Enemy_level_1(Engine engine, float x, float y) {
         super(x, y);
         this.engine = engine;
     }
 
-    public Enemy(float x, float y, Engine engine) {
+    public Enemy_level_1(float x, float y, Engine engine) {
         super(x, y);
         this.engine = engine;
     }

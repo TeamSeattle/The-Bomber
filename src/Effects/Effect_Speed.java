@@ -1,10 +1,12 @@
-package Entities.Effects;
-
-import Graphics.Assets;
+package Effects;
 
 import java.awt.*;
+import Graphics.Assets;
 
-public class Aura {
+/**
+ * Created by Ivailo on 17-Apr-16.
+ */
+public class Effect_Speed {
 
     private boolean isActive;
     private int time = 540;
@@ -12,7 +14,7 @@ public class Aura {
     /**
      * Constructor
      */
-    public Aura(boolean isActive) {
+    public Effect_Speed(boolean isActive) {
         this.isActive = isActive;
     }
 
@@ -29,7 +31,7 @@ public class Aura {
     }
 
     public void render(Graphics graphics , int x, int y){
-        graphics.drawImage(Assets.armor,x + 32,y + 32,null);
+        graphics.drawImage(Assets.speed,x + 32,y + 32,null);
 
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
         graphics.drawString(time / 60 + 1 + "",x + 55,y + 32);

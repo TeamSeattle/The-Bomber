@@ -1,7 +1,8 @@
 package Entities.Creature;
 
 import DIsplay.Display;
-import Entities.Effects.Aura;
+import Effects.Effect_Aura;
+import Effects.Effect_Speed;
 import Entities.Entity;
 import Graphics.Assets;
 import Input.KeyManager;
@@ -16,8 +17,11 @@ public class Player extends Entity {
     // Properties of the player
     protected int health;
     protected float speed;
-    protected Aura aura;
     protected int armor;
+
+    // Effects
+    protected Effect_Aura aura_eff;
+    protected Effect_Speed speed_eff;
 
     /**
      * Constructor
@@ -30,10 +34,14 @@ public class Player extends Entity {
         super(x, y);
         this.engine = engine;
 
+        // Initialize properties
         health = 100;
         speed = 8F;
-        aura = new Aura(false);
         armor = 0;
+
+        // Initialize effects
+        aura_eff = new Effect_Aura(false);
+        speed_eff = new Effect_Speed(false);
     }
 
     @Override
@@ -51,21 +59,37 @@ public class Player extends Entity {
 
         // Temporary to test the aura effect
         if (KeyManager.auraSwitch) {
-            aura.setIsActive(true);
+            aura_eff.setIsActive(true);
         }
-        if (aura.getIsActive()) {
-            aura.tick();
-            System.out.println("Aura tick");
+        if (aura_eff.getIsActive()) {
+            aura_eff.tick();
+            System.out.println("Effect_Aura tick");
         }
+
+        // Temporary to test the speed effect
+        if (KeyManager.speedSwitch) {
+            speed_eff.setIsActive(true);
+            speed = 20;
+        }
+        if (speed_eff.getIsActive()) {
+            speed_eff.tick();
+            System.out.println("Effect_Speed tick");
+        } else speed = 8f;
     }
 
     @Override
     public void render(Graphics graphics) {
         //Just use an existing Asset to image the player. When we decide, will change the image.
         graphics.drawImage(Assets.health, (int) x, (int) y, null);
-        if (aura.getIsActive()) {
-            aura.render(graphics, (int) x, (int) y);
-            System.out.println("Aura tick");
+
+        // Aura
+        if (aura_eff.getIsActive()) {
+            aura_eff.render(graphics, (int) x, (int) y);
+        }
+
+        // Speed
+        if (speed_eff.getIsActive()) {
+            speed_eff.render(graphics, (int) x, (int) y);
         }
     }
 }
