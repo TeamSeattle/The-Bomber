@@ -110,8 +110,12 @@ public class Assets {
 
     // MENU
     public static BufferedImage start_menu_button;
+    public static BufferedImage start_menu_button_hover;
     public static BufferedImage close_menu_button;
+    public static BufferedImage close_menu_button_hover;
     public static BufferedImage settings_menu_button;
+    public static BufferedImage settings_menu_button_hover;
+    // INGAME
     public static BufferedImage settings_button;
 
     /**
@@ -227,7 +231,10 @@ public class Assets {
         close_menu_button = ImageLoader.loadImage("/textures/Menu/Button_exit.png");
         settings_menu_button = ImageLoader.loadImage("/textures/menu/Button_settings.png");
         settings_button = ImageLoader.loadImage("/textures/menu/settings-9.png");
-
+        // HOVER
+        start_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_newgame_hover.png");
+        close_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_exit_hover.png");
+        settings_menu_button_hover = ImageLoader.loadImage("/textures/menu/Button_settings_hover.png");
         printInfo();
     }
 

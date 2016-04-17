@@ -29,6 +29,7 @@ public class MouseManager extends MouseAdapter {
     @Override
     public void mouseReleased(MouseEvent e) {
         click = 0;
+        // settings
         x = 0;
         y = 0;
     }
