@@ -88,21 +88,24 @@ public class Assets {
     public static BufferedImage water;
 
     // ITEMS
-    public static BufferedImage aura;
-    public static BufferedImage health;
-    public static BufferedImage speed;
-    public static BufferedImage armor;
     public static BufferedImage enemy;
     public static BufferedImage healthObject;
-    //public static BufferedImage enemy2;
 
     // BACKGROUNDS
     public static BufferedImage set2_background;
     public static BufferedImage set2_hills;
     public static BufferedImage set2_tiles;
+    public static BufferedImage realistic;
 
     // EMPTY ASSETS USED FOR ERRORS
     public static BufferedImage empty;
+
+    // PLAYER ASSETS
+    public static BufferedImage player;
+    public static BufferedImage health;
+    public static BufferedImage armor;
+    public static BufferedImage aura;
+    public static BufferedImage speed;
 
 
     /**
@@ -111,6 +114,7 @@ public class Assets {
     public static void initialize() {
 
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets_64x64.png"));
+        SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Player/player.png"));
 
         // BROWN ASSETS
         brown_solid = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -189,29 +193,32 @@ public class Assets {
         water = sheet.crop(IMAGE_WIDTH * 12, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
 
         // ITEMS and Scale to 64x64
-        aura = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        // aura = Utilities.scale(aura, 0.5, 0.5);
-
-        health = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        health = Utilities.scale(health, 2, 2);
-
-        speed = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        // speed = Utilities.scale(speed, 0.5, 0.5);
-
-        armor = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 2, IMAGE_WIDTH, IMAGE_HEIGHT);
-        // armor = Utilities.scale(armor, 0.5, 0.5);
-
         enemy = ImageLoader.loadImage("/textures/Enemies/enemyFloating_1.png");
-        empty = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 6,IMAGE_WIDTH,IMAGE_HEIGHT);
+        empty = sheet.crop(IMAGE_WIDTH * 16, IMAGE_HEIGHT * 6, IMAGE_WIDTH, IMAGE_HEIGHT);
         healthObject = ImageLoader.loadImage("/textures/Enemies/health.png");
-       // enemy2 = ImageLoader.loadImage("/textures/Enemies/enemyFloating_!.png");
 
         // BACKGROUNDS
         set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");
         set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
+        realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
 
-        // PRINT INFO
+        // PLAYER
+        player = playerSheet.crop(128,128,64,64);
+        health = ImageLoader.loadImage("/textures/Player/health.png");
+        health = Utilities.scale(health, 0.2, 0.2);
+        armor = ImageLoader.loadImage("/textures/Player/armor.png");
+        armor = Utilities.scale(armor, 0.2, 0.2);
+        speed = ImageLoader.loadImage("/textures/Player/speed.png");
+        speed = Utilities.scale(speed, 0.5, 0.5);
+        aura = ImageLoader.loadImage("/textures/Player/aura.png");
+        aura = Utilities.scale(aura, 0.5, 0.5);
+
+
+        printInfo();
+    }
+
+    private static void printInfo() {
         System.out.println("All assets loaded successfully!");
     }
 }

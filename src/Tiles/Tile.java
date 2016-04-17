@@ -1,5 +1,6 @@
 package Tiles;
 
+import Tiles.Backgrounds.Realistic;
 import Tiles.Backgrounds.Set2Background;
 import Tiles.Backgrounds.Set2Hills;
 import Tiles.Backgrounds.Set2Tiles;
@@ -115,6 +116,7 @@ public class Tile {
     public static Tile set2_background= new Set2Background(100);
     public static Tile set2_hills = new Set2Hills(101);
     public static Tile set2_tiles = new Set2Tiles(102);
+    public static Tile realistic = new Realistic(103);
 
     // Class
     // =====================================

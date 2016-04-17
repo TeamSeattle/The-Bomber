@@ -16,6 +16,7 @@ public class Player extends Entity {
 
     // Properties of the player
     protected int health;
+    protected int maxHealth;
     protected float speed;
     protected int armor;
 
@@ -80,7 +81,7 @@ public class Player extends Entity {
     @Override
     public void render(Graphics graphics) {
         //Just use an existing Asset to image the player. When we decide, will change the image.
-        graphics.drawImage(Assets.health, (int) x, (int) y, null);
+        graphics.drawImage(Assets.player, (int) x, (int) y, null);
 
         // Aura
         if (aura_eff.getIsActive()) {

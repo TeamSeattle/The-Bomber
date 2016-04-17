@@ -9,7 +9,8 @@ import java.util.Random;
 
 public class Helping_Health {
     private Engine engine;
-    private float x, y;
+    private float x;
+    private float y;
 
     Random random = new Random();
     protected float speed = random.nextInt(1) + 2;

@@ -15,7 +15,6 @@ public class EnemyController {
     private Enemy_level_1 tempEnemy;
 
     private Engine engine;
-
     private GameState gameState;
 
     public EnemyController(Engine engine){
