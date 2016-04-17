@@ -23,6 +23,7 @@ public class PauseState extends State {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 200 && MouseManager.getY < 270) && a > 20) {
             StateManager.setCurrentState(Engine.gameState);
+            System.out.println("SWITCHED STATE : GameState");
             a = 0;
         }
         if (MouseManager.isClicked == 1 &&

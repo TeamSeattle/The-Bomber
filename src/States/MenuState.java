@@ -46,6 +46,7 @@ public class MenuState extends State {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 200 && MouseManager.getY < 270)) {
             StateManager.setCurrentState(Engine.gameState);
+            System.out.println("SWITCHED STATE : GameState");
             a = 0;
         }
         if (MouseManager.isClicked == 1 &&
