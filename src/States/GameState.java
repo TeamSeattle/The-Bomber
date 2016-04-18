@@ -11,7 +11,7 @@
 package States;
 
 import DIsplay.UI;
-import Entities.Helping.HelpingController;
+import Entities.Helping.BonusController;
 import Entities.Helping.Helping_Health;
 import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
@@ -25,15 +25,15 @@ import java.awt.*;
 
 public class GameState extends State {
 
-    private float enemyCount = 30;
-    private float healthObjectCount = 3;
+    private float enemyCount = 25;
+    private float powerUpsCount = 1;
     //Create a player with name "player",for the test :)
     private Player player;
     private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
     private Helping_Health healthObject;
-    private HelpingController controllerHealth;
+    private BonusController powerUpsController;
     private UI ui;
 
 
@@ -61,8 +61,8 @@ public class GameState extends State {
         enemyController = new EnemyController(this);
         enemyController.createEnemies(enemyCount);
 
-        controllerHealth = new HelpingController(this);
-        controllerHealth.createHealthObject(healthObjectCount);
+        powerUpsController = new BonusController(this);
+        powerUpsController.createHealthObject(powerUpsCount);
     }
 
     int a = 0;
@@ -75,20 +75,18 @@ public class GameState extends State {
             a = 0;
         }
 
-        // WORLD + PLAYER
+        // WORLD
         world.tick();
-        player.tick();
-
         // ENEMY
         enemy.tick();
         enemyController.tick();
-
         // BONUSES
         healthObject.tick();
-        controllerHealth.tick();
-
+        powerUpsController.tick();
         // UI
         ui.tick();
+        // PLAYER
+        player.tick();
 
         // System value
         a++;
@@ -96,17 +94,16 @@ public class GameState extends State {
 
     @Override
     public void render(Graphics graphics) {
-        // WORLD + PLAYER
+        // WORLD
         world.render(graphics);
-        player.render(graphics);
         // ENEMY
         enemyController.render(graphics);
         // BONUSES
-        controllerHealth.render(graphics);
+        powerUpsController.render(graphics);
         // UI
         ui.render(graphics);
-
-        graphics.drawImage(Assets.in_game_settings,830,0,null);
+        // PLAYER
+        player.render(graphics);
     }
 
 

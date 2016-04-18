@@ -12,6 +12,7 @@ package Utilities;
 import  java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.util.Random;
 
 public class Utilities {
 
@@ -49,5 +50,16 @@ public class Utilities {
         image = op.filter(image, null);
 
         return image;
+    }
+
+    /**
+     * This method will give a random int in some range
+     * @param min -> From number X
+     * @param max -> To number Y
+     * @return -> random int
+     */
+    public static int getRandom(int min,int max){
+        Random random = new Random();
+        return random.nextInt(max - min + 1) + min;
     }
 }

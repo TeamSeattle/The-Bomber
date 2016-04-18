@@ -65,7 +65,7 @@ public class Display {
 
         // Prints Info to the console
         // =====================
-        System.out.printf("Opened Display (%d x %d) \n",WINDOW_WIDTH,WINDOW_HEIGHT);
+        System.out.printf("Opened DIsplay (%d x %d) \n",WINDOW_WIDTH,WINDOW_HEIGHT);
         System.out.println("Canvas Created\n===============");
     }
 

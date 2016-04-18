@@ -112,7 +112,9 @@ public class Assets {
     public static BufferedImage player_walk_right_2;
     public static BufferedImage player_walk_left_2;
     public static BufferedImage health;
+    public static BufferedImage health_empty;
     public static BufferedImage armor;
+    public static BufferedImage armor_empty;
     public static BufferedImage aura;
     public static BufferedImage speed;
 
@@ -139,8 +141,6 @@ public class Assets {
     public static void initialize() {
 
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets_64x64.png"));
-
-
 
         // BROWN ASSETS
         brown_solid = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -248,7 +248,9 @@ public class Assets {
         player_walk_left[1] = player_walk_left_2;
         // PLAYER OTHERS
         health = ImageLoader.loadImage("/textures/Player/health.png");
+        health_empty = ImageLoader.loadImage("/textures/Player/heart_empty.png");
         armor = ImageLoader.loadImage("/textures/Player/armor.png");
+        armor_empty = ImageLoader.loadImage("/textures/Player/armor_empty.png");
         speed = ImageLoader.loadImage("/textures/Player/speed.png");
         aura = ImageLoader.loadImage("/textures/Player/aura.png");
 

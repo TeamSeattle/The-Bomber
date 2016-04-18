@@ -38,9 +38,9 @@ public class Player extends Entity {
         super(x, y);
 
         // Initialize properties
-        HEALTH = 5;
+        HEALTH = 2;
         MAX_HEALTH = 5;
-        ARMOUR = 5;
+        ARMOUR = 3;
         MAX_ARMOUR = 5;
         SPEED = 8F;
 

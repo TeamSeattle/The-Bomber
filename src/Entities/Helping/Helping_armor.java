@@ -6,24 +6,24 @@ import Graphics.Assets;
 import java.awt.*;
 import java.util.Random;
 
-public class Helping_Health extends Entity {
+public class Helping_armor extends Entity {
 
     Random random = new Random();
     protected float speed = random.nextInt(1) + 2;
 
-    public Helping_Health(float x, float y) {
-        super(x,y);
+    public Helping_armor(float x, float y) {
+        super(x, y);
         speed = 2;
     }
 
-    //  @Override
+    @Override
     public void tick() {
-        this.y += speed;
+        y += speed;
     }
 
-    //  @Override
+    @Override
     public void render(Graphics graphics) {
-        graphics.drawImage(Assets.health, (int) x, (int) y, null);
+        graphics.drawImage(Assets.armor, (int) x, (int) y, null);
     }
 
     public float getY() {

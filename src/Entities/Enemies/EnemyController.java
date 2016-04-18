@@ -2,6 +2,7 @@ package Entities.Enemies;
 
 import Main.Engine;
 import States.GameState;
+import Utilities.Utilities;
 
 import java.awt.*;
 import java.util.LinkedList;
@@ -12,7 +13,6 @@ public class EnemyController {
     private LinkedList<Enemy_level_1> e = new LinkedList<>();
 
     Random random = new Random();
-    private Enemy_level_1 tempEnemy;
 
     private Engine engine;
     private GameState gameState;
@@ -23,28 +23,32 @@ public class EnemyController {
 
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
-            addEnemies(new Enemy_level_1(random.nextInt(896),-200));
+            int xPosition = Utilities.getRandom(1,896);
+            int yPosition = Utilities.getRandom(200,400);
+            addEnemies(new Enemy_level_1(xPosition,yPosition * -1));
         }
     }
 
     public void tick(){
-        for (int i = 0; i < e.size(); i++){
-            tempEnemy = e.get(i);
+        for (Enemy_level_1 enemy : e) {
+            int xPosition = Utilities.getRandom(1,896);
+            int yPosition = Utilities.getRandom(200,400);
+            int speed = Utilities.getRandom(1,5);
 
-            if (tempEnemy.getY() > 700){
-                tempEnemy.setY(-200);
-                tempEnemy.setX(random.nextInt(696));
-                tempEnemy.setSpeed(random.nextInt(5) + 1);
+            if (enemy.getY() > 650) {
+                // Set values
+                enemy.setY(yPosition * -1);
+                enemy.setX(xPosition);
+                enemy.setSpeed(speed);
             }
-            tempEnemy.tick();
+            enemy.tick();
         }
     }
 
     public void render (Graphics graphics){
 
-        for (int i = 0; i < e.size(); i++){
-            tempEnemy = e.get(i);
-            tempEnemy.render(graphics);
+        for (Enemy_level_1 enemy : e) {
+            enemy.render(graphics);
         }
     }
 
