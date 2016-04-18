@@ -30,11 +30,17 @@ public class Effect_Speed {
         }
     }
 
+    /**
+     * This method will be called in the render method of the player
+     */
     public void render(Graphics graphics , int x, int y){
+        // DRAW PLAYER
         graphics.drawImage(Assets.speed,x + 32,y + 32,null);
 
+        // DRAW CORNER
+        graphics.setColor(Color.white);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString(time / 60 + 1 + "",x + 55,y + 32);
+        graphics.drawString(time / 60 + 1 + "",x + 85,y + 35);
     }
 
     /**

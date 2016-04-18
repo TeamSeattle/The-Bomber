@@ -10,6 +10,7 @@
 
 package States;
 
+import DIsplay.UI;
 import Entities.Helping.HelpingController;
 import Entities.Helping.Helping_Health;
 import Entities.Enemies.Enemy_level_1;
@@ -24,7 +25,7 @@ import java.awt.*;
 
 public class GameState extends State {
 
-    private float enemyCount = 5;
+    private float enemyCount = 30;
     private float healthObjectCount = 3;
     //Create a player with name "player",for the test :)
     private Player player;
@@ -33,6 +34,7 @@ public class GameState extends State {
     private Enemy_level_1 enemy;
     private Helping_Health healthObject;
     private HelpingController controllerHealth;
+    private UI ui;
 
 
     /**
@@ -51,9 +53,10 @@ public class GameState extends State {
         world = new World("level_1");
 
         // Create a player
-        player = new Player(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        player = new Player(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 10 - 5);
         enemy = new Enemy_level_1(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
         healthObject = new Helping_Health(Assets.IMAGE_HEIGHT * 6, Assets.IMAGE_HEIGHT * 9 + 33);
+        ui = new UI(this);
 
         enemyController = new EnemyController(this);
         enemyController.createEnemies(enemyCount);
@@ -84,18 +87,24 @@ public class GameState extends State {
         healthObject.tick();
         controllerHealth.tick();
 
+        // UI
+        ui.tick();
+
         // System value
         a++;
     }
 
     @Override
     public void render(Graphics graphics) {
-        //Test the player drawing.
+        // WORLD + PLAYER
         world.render(graphics);
         player.render(graphics);
-
+        // ENEMY
         enemyController.render(graphics);
+        // BONUSES
         controllerHealth.render(graphics);
+        // UI
+        ui.render(graphics);
 
         graphics.drawImage(Assets.in_game_settings,830,0,null);
     }
@@ -117,4 +126,7 @@ public class GameState extends State {
         this.enemyCount = enemyCount;
     }
 
+    public Player getPlayer(){
+        return player;
+    }
 }

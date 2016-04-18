@@ -31,7 +31,7 @@ public class EnemyController {
         for (int i = 0; i < e.size(); i++){
             tempEnemy = e.get(i);
 
-            if (tempEnemy.getY() > 660){
+            if (tempEnemy.getY() > 700){
                 tempEnemy.setY(-200);
                 tempEnemy.setX(random.nextInt(696));
                 tempEnemy.setSpeed(random.nextInt(5) + 1);

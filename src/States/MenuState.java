@@ -19,6 +19,7 @@ import Main.Engine;
 import java.awt.*;
 
 import Graphics.Assets;
+import Main.Launcher;
 
 public class MenuState extends State {
 
@@ -42,18 +43,22 @@ public class MenuState extends State {
             System.out.println("SWITCHED STATE : GameState");
             a = 0;
         }
+
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 200 && MouseManager.getY < 270)) {
+            Engine.gameState = new GameState(Engine.getEngine());
             StateManager.setCurrentState(Engine.gameState);
             System.out.println("SWITCHED STATE : GameState");
             a = 0;
         }
+
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 300 && MouseManager.getY < 370) && a > 20) {
             // NO SETTINGS MENU
         }
+
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 500 && MouseManager.getY < 570) && a > 20) {

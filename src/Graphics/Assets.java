@@ -97,12 +97,20 @@ public class Assets {
     public static BufferedImage set2_tiles;
     public static BufferedImage realistic;
     public static BufferedImage menu_background;
+    public static BufferedImage darken;
 
     // EMPTY ASSETS USED FOR ERRORS
     public static BufferedImage empty;
 
     // PLAYER ASSETS
-    public static BufferedImage player;
+    public static BufferedImage player_stand;
+    public static BufferedImage[] player_walk_right;
+    public static BufferedImage[] player_walk_left;
+
+    public static BufferedImage player_walk_right_1;
+    public static BufferedImage player_walk_left_1;
+    public static BufferedImage player_walk_right_2;
+    public static BufferedImage player_walk_left_2;
     public static BufferedImage health;
     public static BufferedImage armor;
     public static BufferedImage aura;
@@ -131,7 +139,8 @@ public class Assets {
     public static void initialize() {
 
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/Assets_64x64.png"));
-        SpriteSheet playerSheet = new SpriteSheet(ImageLoader.loadImage("/textures/Player/player.png"));
+
+
 
         // BROWN ASSETS
         brown_solid = sheet.crop(0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -219,19 +228,29 @@ public class Assets {
         set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
         realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
-        menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
-        menu_background = Utilities.scale(menu_background, 1.25, 1.071);
+        menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background_2.png");
+        menu_background = Utilities.scale(menu_background, 1.245, 1.13);
+        darken = ImageLoader.loadImage("/textures/Backgrounds/darken.png");
 
         // PLAYER
-        player = playerSheet.crop(128,128,64,64);
+        player_stand = ImageLoader.loadImage("/textures/Player/player_stand.png");
+        player_walk_right_1 = ImageLoader.loadImage("/textures/Player/player_walk_1.png");
+        player_walk_right_2 = ImageLoader.loadImage("/textures/Player/player_walk_2.png");
+        player_walk_left_1 = Utilities.flip(player_walk_right_1);
+        player_walk_left_2 = Utilities.flip(player_walk_right_2);
+        // PLAYER ANIMATIONS
+        player_walk_right = new BufferedImage[2];
+        player_walk_left = new BufferedImage[2];
+        // FILL ARRAYS
+        player_walk_right[0] = player_walk_right_1;
+        player_walk_right[1] = player_walk_right_2;
+        player_walk_left[0] = player_walk_left_1;
+        player_walk_left[1] = player_walk_left_2;
+        // PLAYER OTHERS
         health = ImageLoader.loadImage("/textures/Player/health.png");
-        health = Utilities.scale(health, 0.2, 0.2);
         armor = ImageLoader.loadImage("/textures/Player/armor.png");
-        armor = Utilities.scale(armor, 0.2, 0.2);
         speed = ImageLoader.loadImage("/textures/Player/speed.png");
-        speed = Utilities.scale(speed, 0.5, 0.5);
         aura = ImageLoader.loadImage("/textures/Player/aura.png");
-        aura = Utilities.scale(aura, 0.5, 0.5);
 
         // MENU
         start_menu_button = ImageLoader.loadImage("/textures/Menu/Button_newgame.png");

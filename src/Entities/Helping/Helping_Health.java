@@ -23,7 +23,7 @@ public class Helping_Health {
 
     //  @Override
     public void render(Graphics graphics) {
-        graphics.drawImage(Assets.healthObject, (int) x, (int) y, null);
+        graphics.drawImage(Assets.health, (int) x, (int) y, null);
     }
 
     public float getY() {

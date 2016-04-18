@@ -223,6 +223,10 @@ public class Engine implements Runnable {
         }
     }
 
+    public static Engine getEngine(){
+        return new Engine();
+    }
+
     public State getGameState() {
         return gameState;
     }
