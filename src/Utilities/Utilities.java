@@ -17,13 +17,14 @@ import java.util.Random;
 public class Utilities {
 
     /**
-     * This method will scale a BufferedImage object
-     * @param image -> The image you want to be scale
+     * This method will scaleImage a BufferedImage object
+     * @param image -> The image you want to be scaleImage
      * @param xScale -> In double how much on the X axes
      * @param yScale -> In double how much on the Y axes
      * @return -> Returns the scaled image
      */
-    public static BufferedImage scale(BufferedImage image,double xScale, double yScale) {
+    public static BufferedImage scaleImage(BufferedImage image, double xScale, double yScale) {
+
         AffineTransform at = new AffineTransform();
         at.scale(xScale,yScale);
         BufferedImage after = new BufferedImage((int)(image.getWidth() * xScale),(int)(image.getHeight() * yScale),BufferedImage.TYPE_4BYTE_ABGR);
@@ -33,11 +34,11 @@ public class Utilities {
     }
 
     /**
-     * This method will flip the image horizontally
+     * This method will flipImage the image horizontally
      * @param image -> The image you want to be flipped
      * @return -> Returns the flipped image
      */
-    public static BufferedImage flip(BufferedImage image){
+    public static BufferedImage flipImage(BufferedImage image){
 
         AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
         tx.translate(0, -image.getHeight(null));

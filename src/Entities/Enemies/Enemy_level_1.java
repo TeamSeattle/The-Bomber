@@ -2,14 +2,13 @@ package Entities.Enemies;
 
 import Entities.Entity;
 import Graphics.Assets;
-import Main.Engine;
+import Utilities.Utilities;
 
 import java.awt.*;
-import java.util.Random;
 
 public class Enemy_level_1 extends Entity {
-    Random random = new Random();
-    private float speed = random.nextInt(5) + 1;
+
+    private float speed = Utilities.getRandom(1,5);
 
     /**
      * Constructor
@@ -20,11 +19,18 @@ public class Enemy_level_1 extends Entity {
         super(x, y);
     }
 
+    /**
+     * Ticks the current enemy object
+     */
     @Override
     public void tick() {
         this.y += speed;
     }
 
+    /**
+     * Renders the enemy to the screen
+     * @param graphics -> Required
+     */
     @Override
     public void render(Graphics graphics) {
         graphics.drawImage(Assets.enemy, (int) x, (int) y, null);

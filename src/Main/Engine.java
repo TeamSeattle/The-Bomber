@@ -45,19 +45,26 @@ public class Engine implements Runnable {
     private Display display;
     private Thread thread;
     private static final int FRAMES_PER_SECOND = 60;
+
     // This boolean will regulate the GAME LOOP
     private boolean running = false;
+
     // Properties for rendering
     public BufferStrategy bufferStrategy;
     public static Graphics graphics;
+
     // All the states
     public static State gameState;
     public static State menuState;
     public static State deadState;
     public static State pauseState;
+
     //Input
     private KeyManager keyManager;
     private MouseManager mouseManager;
+
+    // Volume Boolean
+    public static boolean volume;
 
 
     /**
@@ -135,6 +142,9 @@ public class Engine implements Runnable {
         deadState = new DeadState(this);
         pauseState = new PauseState(this);
         StateManager.setCurrentState(menuState);
+
+        // Volume
+        volume = true;
 
         // Print info
         System.out.println("Current State is: " + StateManager.getCurrentState().name);

@@ -125,14 +125,16 @@ public class Assets {
     public static BufferedImage close_menu_button_hover;
     public static BufferedImage settings_menu_button;
     public static BufferedImage settings_menu_button_hover;
-    public static BufferedImage unpause_menu_button;
-    public static BufferedImage unpause_menu_button_hover;
-    public static BufferedImage volumeon_menu_button;
-    public static BufferedImage volumeon_menu_button_hover;
-    public static BufferedImage volumeoff_menu_button;
-    public static BufferedImage volumeoff_menu_button_hover;
+    public static BufferedImage resume_menu_button;
+    public static BufferedImage resume_menu_button_hover;
+    public static BufferedImage volume_on_menu_button;
+    public static BufferedImage volume_on_menu_button_hover;
+    public static BufferedImage volume_off_menu_button;
+    public static BufferedImage volume_off_menu_button_hover;
+    public static BufferedImage to_main_menu;
+    public static BufferedImage to_main_menu_hover;
 
-    // INGAME
+    // IN-GAME
     public static BufferedImage in_game_settings;
 
     /**
@@ -228,16 +230,16 @@ public class Assets {
         set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
         realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
-        menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background_2.png");
-        menu_background = Utilities.scale(menu_background, 1.245, 1.13);
+        menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
+        menu_background = Utilities.scaleImage(menu_background, 1.245, 1.13);
         darken = ImageLoader.loadImage("/textures/Backgrounds/darken.png");
 
         // PLAYER
         player_stand = ImageLoader.loadImage("/textures/Player/player_stand.png");
         player_walk_right_1 = ImageLoader.loadImage("/textures/Player/player_walk_1.png");
         player_walk_right_2 = ImageLoader.loadImage("/textures/Player/player_walk_2.png");
-        player_walk_left_1 = Utilities.flip(player_walk_right_1);
-        player_walk_left_2 = Utilities.flip(player_walk_right_2);
+        player_walk_left_1 = Utilities.flipImage(player_walk_right_1);
+        player_walk_left_2 = Utilities.flipImage(player_walk_right_2);
         // PLAYER ANIMATIONS
         player_walk_right = new BufferedImage[2];
         player_walk_left = new BufferedImage[2];
@@ -258,18 +260,20 @@ public class Assets {
         start_menu_button = ImageLoader.loadImage("/textures/Menu/Button_newgame.png");
         close_menu_button = ImageLoader.loadImage("/textures/Menu/Button_exit.png");
         settings_menu_button = ImageLoader.loadImage("/textures/menu/Button_settings.png");
-        unpause_menu_button = ImageLoader.loadImage("/textures/Menu/Button_unpause.png");
-        volumeon_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_on.png");
-        volumeoff_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
+        resume_menu_button = ImageLoader.loadImage("/textures/Menu/Button_unpause.png");
+        volume_on_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_on.png");
+        volume_off_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
         in_game_settings = ImageLoader.loadImage("/textures/menu/settings-9.png");
+        to_main_menu = ImageLoader.loadImage("/textures/menu/Button_to_main_menu.png");
 
         // HOVER
         start_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_newgame_hover.png");
         close_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_exit_hover.png");
         settings_menu_button_hover = ImageLoader.loadImage("/textures/menu/Button_settings_hover.png");
-        unpause_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_unpause_hover.png");
-        volumeon_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_on_hover.png");
-        volumeoff_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
+        resume_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_unpause_hover.png");
+        volume_on_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_on_hover.png");
+        volume_off_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_off_hover.png");
+        to_main_menu_hover = ImageLoader.loadImage("/textures/menu/Button_to_main_menu_hover.png");
 
         printInfo();
     }

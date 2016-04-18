@@ -2,26 +2,32 @@ package Entities.Helping;
 
 import Entities.Entity;
 import Graphics.Assets;
+import Utilities.Utilities;
 
 import java.awt.*;
-import java.util.Random;
 
-public class Helping_Health extends Entity {
+public class Helping_health extends Entity {
 
-    Random random = new Random();
-    protected float speed = random.nextInt(1) + 2;
+    protected float speed = Utilities.getRandom(1,5);
 
-    public Helping_Health(float x, float y) {
+    public Helping_health(float x, float y) {
         super(x,y);
         speed = 2;
     }
 
-    //  @Override
+    /**
+     * Ticks the current power-up object
+     */
+    @Override
     public void tick() {
         this.y += speed;
     }
 
-    //  @Override
+    /**
+     * Renders the current power-up to the screen
+     * @param graphics -> Required
+     */
+    @Override
     public void render(Graphics graphics) {
         graphics.drawImage(Assets.health, (int) x, (int) y, null);
     }

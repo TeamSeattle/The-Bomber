@@ -12,7 +12,7 @@ package States;
 
 import DIsplay.UI;
 import Entities.Helping.BonusController;
-import Entities.Helping.Helping_Health;
+import Entities.Helping.Helping_health;
 import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
 import Entities.Enemies.EnemyController;
@@ -27,12 +27,12 @@ public class GameState extends State {
 
     private float enemyCount = 25;
     private float powerUpsCount = 1;
-    //Create a player with name "player",for the test :)
+    //Create time player with name "player",for the test :)
     private Player player;
     private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
-    private Helping_Health healthObject;
+    private Helping_health healthObject;
     private BonusController powerUpsController;
     private UI ui;
 
@@ -52,27 +52,30 @@ public class GameState extends State {
         // Create world
         world = new World("level_1");
 
-        // Create a player
+        // Create time player
         player = new Player(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 10 - 5);
         enemy = new Enemy_level_1(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
-        healthObject = new Helping_Health(Assets.IMAGE_HEIGHT * 6, Assets.IMAGE_HEIGHT * 9 + 33);
         ui = new UI(this);
 
+        // Initialize Enemies
         enemyController = new EnemyController(this);
         enemyController.createEnemies(enemyCount);
 
+        // Initialize Power-ups
         powerUpsController = new BonusController(this);
         powerUpsController.createHealthObject(powerUpsCount);
     }
 
-    int a = 0;
+    private int time = 0;
+
     @Override
     public void tick() {
 
-        if (KeyManager.escape && a > 20) {
+        if (KeyManager.escape && time > 20) {
             StateManager.setCurrentState(Engine.pauseState);
             System.out.println("SWITCHED STATE : PauseState");
-            a = 0;
+            time = 0;
+            PauseState.resetTime();
         }
 
         // WORLD
@@ -81,7 +84,6 @@ public class GameState extends State {
         enemy.tick();
         enemyController.tick();
         // BONUSES
-        healthObject.tick();
         powerUpsController.tick();
         // UI
         ui.tick();
@@ -89,7 +91,7 @@ public class GameState extends State {
         player.tick();
 
         // System value
-        a++;
+        time++;
     }
 
     @Override
@@ -106,6 +108,9 @@ public class GameState extends State {
         player.render(graphics);
     }
 
+    public Player getPlayer(){
+        return player;
+    }
 
     public float getObjectCount() {
         return enemyCount;
@@ -121,9 +126,5 @@ public class GameState extends State {
 
     public void setObjectCount(float enemyCount) {
         this.enemyCount = enemyCount;
-    }
-
-    public Player getPlayer(){
-        return player;
     }
 }
