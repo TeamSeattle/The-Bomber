@@ -9,13 +9,13 @@ import java.util.Random;
 
 public class BonusController {
 
-    private LinkedList<Helping_health> health_drops = new LinkedList<>();
+    private LinkedList<Helping_Health> health_drops = new LinkedList<>();
     private LinkedList<Helping_armor> armor_drops = new LinkedList<>();
     private LinkedList<Helping_aura> aura_drops = new LinkedList<>();
     private LinkedList<Helping_speed> speed_drops = new LinkedList<>();
 
     Random random = new Random();
-    private Helping_health tempHealthObject;
+    private Helping_Health tempHealthObject;
 
     private GameState gameState;
 
@@ -25,7 +25,7 @@ public class BonusController {
 
     public void createHealthObject(float healthObjectCount) {
         for (int i = 0; i < healthObjectCount; i++) {
-            addHealthDrop(new Helping_health(random.nextInt(850),
+            addHealthDrop(new Helping_Health(random.nextInt(850),
                     Utilities.getRandom(3000,7000) * -1));
             addArmorDrop(new Helping_armor(random.nextInt(850),
                     Utilities.getRandom(7000,11000) * -1));
@@ -43,7 +43,7 @@ public class BonusController {
     public void tick() {
 
         // HEALTH
-        for (Helping_health health_drop : health_drops) {
+        for (Helping_Health health_drop : health_drops) {
             int speed = Utilities.getRandom(1,3);
             int xPosition = Utilities.getRandom(1,896);
             int yPosition = Utilities.getRandom(3000,7000);
@@ -110,7 +110,7 @@ public class BonusController {
      */
     public void render(Graphics graphics) {
 
-        for (Helping_health health_drop : health_drops) {
+        for (Helping_Health health_drop : health_drops) {
             health_drop.render(graphics);
         }
 
@@ -127,7 +127,7 @@ public class BonusController {
         }
     }
 
-    public void addHealthDrop(Helping_health drop) {
+    public void addHealthDrop(Helping_Health drop) {
         health_drops.add(drop);
     }
 
@@ -143,7 +143,7 @@ public class BonusController {
         speed_drops.add(drop);
     }
 
-    public void removeHealthObject(Helping_health drop) {
+    public void removeHealthObject(Helping_Health drop) {
         health_drops.remove(drop);
     }
 

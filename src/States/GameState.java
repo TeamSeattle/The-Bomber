@@ -12,7 +12,7 @@ package States;
 
 import DIsplay.UI;
 import Entities.Helping.BonusController;
-import Entities.Helping.Helping_health;
+import Entities.Helping.Helping_Health;
 import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
 import Entities.Enemies.EnemyController;
@@ -32,7 +32,7 @@ public class GameState extends State {
     private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
-    private Helping_health healthObject;
+    private Helping_Health healthObject;
     private BonusController powerUpsController;
     private UI ui;
 
