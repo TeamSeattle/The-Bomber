@@ -11,10 +11,11 @@
 package States;
 
 import DIsplay.UI;
+import Entities.Helping.BonusController;
+import Entities.Helping.Helping_Health;
+import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
 import Entities.Enemies.EnemyController;
-import Entities.Enemies.Enemy_level_1;
-import Entities.Helping.BonusController;
 import Graphics.Assets;
 import Input.KeyManager;
 import Main.Engine;
@@ -31,6 +32,7 @@ public class GameState extends State {
     private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
+    private Helping_Health healthObject;
     private BonusController powerUpsController;
     private UI ui;
 

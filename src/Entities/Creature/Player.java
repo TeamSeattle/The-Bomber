@@ -72,7 +72,7 @@ public class Player extends Entity {
             }
         }
         if (KeyManager.right) {
-            if (x < Display.WINDOW_WIDTH -56) {
+            if (x <Display.WINDOW_WIDTH -56) {
                 x += SPEED;
             }
         }
