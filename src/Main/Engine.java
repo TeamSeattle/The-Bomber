@@ -29,7 +29,7 @@
 
 package Main;
 
-import DIsplay.Display;
+import Display.Display;
 import Graphics.Assets;
 import Input.KeyManager;
 import Input.MouseManager;
