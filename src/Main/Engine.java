@@ -59,6 +59,7 @@ public class Engine implements Runnable {
     public static State deadState;
     public static State pauseState;
     public static State levelPickerState;
+    public static State infoState;
 
     //Input
     private KeyManager keyManager;
@@ -142,6 +143,7 @@ public class Engine implements Runnable {
         deadState = new DeadState(this);
         pauseState = new PauseState(this);
         levelPickerState = new LevelPickerState(this);
+        infoState = new InfoState(this);
         StateManager.setCurrentState(menuState);
 
         // Volume

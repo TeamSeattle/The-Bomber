@@ -47,7 +47,7 @@ public class Player extends Entity {
         super(x, y, player_stand.getWidth(), player_stand.getHeight());
 
         // Initialize properties
-        HEALTH = 5;
+        HEALTH = 1;
         MAX_HEALTH = 5;
         ARMOUR = 5;
         MAX_ARMOUR = 5;
@@ -86,22 +86,25 @@ public class Player extends Entity {
             }
         }
 
-        // Temporary to test the aura effect
+        // AURA
         if (KeyManager.auraSwitch) {
-            aura_eff.setIsActive(true);
+            Effect_Aura.setIsActive(true);
         }
         if (aura_eff.getIsActive()) {
             aura_eff.tick();
             System.out.println("Effect_Aura tick");
         }
 
-        // Temporary to test the SPEED effect
+
+        // SPEED
         if (KeyManager.speedSwitch) {
-            speed_eff.setIsActive(true);
+            Effect_Speed.setIsActive(true);
             SPEED = 20;
         }
+
         if (speed_eff.getIsActive()) {
             speed_eff.tick();
+            SPEED = 20;
             System.out.println("Effect_Speed tick");
         } else {
             SPEED = 8;

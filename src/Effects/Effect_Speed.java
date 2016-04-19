@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class Effect_Speed {
 
-    private boolean isActive;
+    private static boolean isActive;
     private int time = 540;
 
     /**
@@ -43,8 +43,8 @@ public class Effect_Speed {
      * Sets the value of the isActive variable
      * @param state -> Give the value to be set
      */
-    public void setIsActive(boolean state){
-        this.isActive = state;
+    public static void setIsActive(boolean state){
+        isActive = state;
     }
 
     /**

@@ -44,7 +44,7 @@ public class PauseState extends State {
         // Render text
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString("(Pause Menu)",345,350);
+        graphics.drawString(" Pause Menu ",345,360);
 
         // Render all the buttons
         ResumeButton.render(graphics);

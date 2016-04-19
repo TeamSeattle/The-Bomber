@@ -24,7 +24,7 @@ public class BonusController {
     private int speedMax = 4;
 
     // SYSTEM DATA
-    private GameState gameState;
+    public static GameState gameState;
 
     // DEADLINE
     private static final int DEAD_LINE = 700;

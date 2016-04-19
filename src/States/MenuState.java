@@ -53,7 +53,7 @@ public class MenuState extends State {
         // Render text
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString("(Main Menu)",355,350);
+        graphics.drawString(" Main Menu ",355,360);
 
         // Render all the buttons
         StartNewGameButton.render(graphics);

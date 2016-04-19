@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Effect_Aura {
 
-    private boolean isActive;
+    private static boolean isActive;
     private int time = 540;
 
     /**
@@ -40,15 +40,15 @@ public class Effect_Aura {
      * Sets the value of the isActive variable
      * @param state -> Give the value to be set
      */
-    public void setIsActive(boolean state){
-        this.isActive = state;
+    public static void setIsActive(boolean state){
+        isActive = state;
     }
 
     /**
      * Returns in what state is the isActive
      * @return -> returns boolean
      */
-    public boolean getIsActive(){
+    public static boolean getIsActive(){
         return isActive;
     }
 

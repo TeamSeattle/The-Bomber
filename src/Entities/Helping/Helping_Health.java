@@ -23,6 +23,20 @@ public class Helping_Health extends Entity {
     public void tick() {
         this.y += speed;
 
+        Rectangle playerBounds = BonusController.gameState.getPlayer().bounds;
+        boolean activeImpact = (y > 500) && Utilities.isInImpact(playerBounds, bounds) && isActive;
+
+        if (activeImpact){
+            isActive = false;
+            if (BonusController.gameState.getPlayer().HEALTH < 5){
+                BonusController.gameState.getPlayer().HEALTH++;
+            }
+
+            x = Utilities.getRandom(1, 896);
+            y = Utilities.getRandom(3000, 15000);
+            isActive = true;
+        }
+
         // Update Bounding box
         bounds.x = (int) x;
         bounds.y = (int) y;

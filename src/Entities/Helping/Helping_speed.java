@@ -1,5 +1,6 @@
 package Entities.Helping;
 
+import Effects.Effect_Speed;
 import Entities.Entity;
 import Graphics.Assets;
 import Utilities.Utilities;
@@ -22,6 +23,18 @@ public class Helping_speed extends Entity {
     @Override
     public void tick() {
         y += speed;
+
+        Rectangle playerBounds = BonusController.gameState.getPlayer().bounds;
+        boolean activeImpact = (y > 500) && Utilities.isInImpact(playerBounds, bounds) && isActive;
+
+        if (activeImpact){
+            isActive = false;
+            Effect_Speed.setIsActive(true);
+
+            x = Utilities.getRandom(1, 896);
+            y = Utilities.getRandom(3000, 15000);
+            isActive = true;
+        }
 
         // Update Bounding box
         bounds.x = (int) x;

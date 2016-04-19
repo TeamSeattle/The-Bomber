@@ -1,5 +1,6 @@
 package Entities.Helping;
 
+import Entities.Enemies.EnemyController;
 import Entities.Entity;
 import Graphics.Assets;
 import Utilities.Utilities;
@@ -22,6 +23,20 @@ public class Helping_armor extends Entity {
     @Override
     public void tick() {
         y += speed;
+
+        Rectangle playerBounds = BonusController.gameState.getPlayer().bounds;
+        boolean activeImpact = (y > 500) && Utilities.isInImpact(playerBounds, bounds) && isActive;
+
+        if (activeImpact){
+            isActive = false;
+            if (BonusController.gameState.getPlayer().ARMOUR < 5){
+                BonusController.gameState.getPlayer().ARMOUR++;
+            }
+
+            x = Utilities.getRandom(1, 896);
+            y = Utilities.getRandom(3000, 15000);
+            isActive = true;
+        }
 
         // Update Bounding box
         bounds.x = (int) x;

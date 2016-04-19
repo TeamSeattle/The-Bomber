@@ -1,5 +1,6 @@
 package Entities.Enemies;
 
+import Effects.Effect_Aura;
 import Entities.Entity;
 import Graphics.Assets;
 import Main.Engine;
@@ -66,17 +67,19 @@ public class Enemy_level_1 extends Entity {
             isActive = false;
             System.out.println("Impact");
 
-            if (EnemyController.gameState.getPlayer().ARMOUR > 0) {
-                EnemyController.gameState.getPlayer().ARMOUR--;
-            } else {
-                if (EnemyController.gameState.getPlayer().HEALTH > 0) {
-                    EnemyController.gameState.getPlayer().HEALTH--;
-                    // CHECK IF DEAD
-                    if (EnemyController.gameState.getPlayer().HEALTH == 0) {
-                        // THE PLAYER IS DEAD
-                        EnemyController.gameState.getPlayer().isDead = true;
-                        Utilities.sleep(2);
-                        StateManager.setCurrentState(Engine.deadState);
+            if (!Effect_Aura.getIsActive()){
+                if (EnemyController.gameState.getPlayer().ARMOUR > 0) {
+                    EnemyController.gameState.getPlayer().ARMOUR--;
+                } else {
+                    if (EnemyController.gameState.getPlayer().HEALTH > 0) {
+                        EnemyController.gameState.getPlayer().HEALTH--;
+                        // CHECK IF DEAD
+                        if (EnemyController.gameState.getPlayer().HEALTH == 0) {
+                            // THE PLAYER IS DEAD
+                            EnemyController.gameState.getPlayer().isDead = true;
+                            Utilities.sleep(2);
+                            StateManager.setCurrentState(Engine.deadState);
+                        }
                     }
                 }
             }

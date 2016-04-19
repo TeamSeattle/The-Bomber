@@ -34,7 +34,7 @@ public class LevelPickerState extends State {
         // Render text
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString("(Level Selection)",315,350);
+        graphics.drawString(" Level Selection ",315,360);
 
         Level1Button.render(graphics);
         Level2Button.render(graphics);

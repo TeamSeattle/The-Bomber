@@ -2,6 +2,8 @@ package DIsplay.Menus.OtherButtons;
 
 import Graphics.Assets;
 import Input.MouseManager;
+import Main.Engine;
+import States.StateManager;
 
 import java.awt.*;
 
@@ -17,13 +19,14 @@ public class InfoButton {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 700 && MouseManager.getY < 770) &&
                 time > 20) {
+            StateManager.setCurrentState(Engine.infoState);
             time = 0;
         }
         time++;
     }
 
     /**
-     * Renders the exit button for the menum
+     * Renders the exit button for the menus
      *
      * @param graphics -> Required
      */

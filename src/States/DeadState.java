@@ -47,12 +47,22 @@ public class DeadState extends State{
         // Render text
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString("(YOU ARE DEAD)",325,350);
+        graphics.drawString(" YOU ARE DEAD ",325,360);
         graphics.drawString("SCORE:",390,520);
 
         graphics.setColor(Color.YELLOW);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 40));
-        graphics.drawString(Player.POINTS + "",440,570);
+
+        // Draw point in the center
+        if (Player.POINTS < 10){
+            graphics.drawString(Player.POINTS + "",440,570);
+        } else if (Player.POINTS >= 10 && Player.POINTS < 100){
+            graphics.drawString(Player.POINTS + "",426,570);
+        } else if (Player.POINTS >= 100 && Player.POINTS < 1000){
+            graphics.drawString(Player.POINTS + "",416,570);
+        } else {
+            graphics.drawString(Player.POINTS + "",406,570);
+        }
 
         ToMainMenuButtonDead.render(graphics);
         StartNewGameButton.render(graphics);

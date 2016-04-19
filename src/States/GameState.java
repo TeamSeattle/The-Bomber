@@ -36,7 +36,6 @@ public class GameState extends State {
     // Level
     public static String level = "level_1";
 
-
     /**
      * Constructor
      */

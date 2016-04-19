@@ -112,6 +112,7 @@ public class Assets {
     public static BufferedImage set4_tiles;
 
     public static BufferedImage menu_background;
+    public static BufferedImage info_background;
     public static BufferedImage darken;
 
     // EMPTY ASSETS USED FOR ERRORS
@@ -289,6 +290,8 @@ public class Assets {
         menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
         menu_background = Utilities.scaleImage(menu_background, 1.245, 1.13);
         darken = ImageLoader.loadImage("/textures/Backgrounds/darken.png");
+        info_background = ImageLoader.loadImage("/textures/Backgrounds/info_background.png");
+        info_background = Utilities.scaleImage(info_background, 1.245, 1.13);
 
         // PLAYER
         player_stand = ImageLoader.loadImage("/textures/Player/player_stand.png");
