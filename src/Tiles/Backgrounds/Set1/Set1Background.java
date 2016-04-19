@@ -1,14 +1,14 @@
-package Tiles.Backgrounds;
+package Tiles.Backgrounds.Set1;
 
 import Graphics.Assets;
 import Tiles.Tile;
 
 import java.awt.*;
 
-public class Set2Background extends Tile {
+public class Set1Background extends Tile{
 
-    public Set2Background(int id) {
-        super(Assets.set2_background, id);
+    public Set1Background(int id) {
+        super(Assets.set1_background, id);
     }
 
     @Override

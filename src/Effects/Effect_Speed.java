@@ -1,7 +1,8 @@
 package Effects;
 
-import java.awt.*;
 import Graphics.Assets;
+
+import java.awt.*;
 
 /**
  * Created by Ivailo on 17-Apr-16.
@@ -35,12 +36,7 @@ public class Effect_Speed {
      */
     public void render(Graphics graphics , int x, int y){
         // DRAW PLAYER
-        graphics.drawImage(Assets.speed,x + 32,y + 32,null);
-
-        // DRAW CORNER
-        graphics.setColor(Color.white);
-        graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawString(time / 60 + 1 + "",x + 85,y + 35);
+            graphics.drawImage(Assets.speed_icon,x + 110,y + 48,null);
     }
 
     /**
@@ -57,5 +53,9 @@ public class Effect_Speed {
      */
     public boolean getIsActive(){
         return isActive;
+    }
+
+    public int getTimeLeft(){
+        return time / 60 + 1;
     }
 }

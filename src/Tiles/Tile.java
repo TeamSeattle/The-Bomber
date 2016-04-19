@@ -1,9 +1,17 @@
 package Tiles;
 
-import Tiles.Backgrounds.Realistic;
-import Tiles.Backgrounds.Set2Background;
-import Tiles.Backgrounds.Set2Hills;
-import Tiles.Backgrounds.Set2Tiles;
+import Tiles.Backgrounds.Set1.Set1Background;
+import Tiles.Backgrounds.Set1.Set1Hills;
+import Tiles.Backgrounds.Set1.Set1Tiles;
+import Tiles.Backgrounds.Set2.Set2Background;
+import Tiles.Backgrounds.Set2.Set2Hills;
+import Tiles.Backgrounds.Set2.Set2Tiles;
+import Tiles.Backgrounds.Set3.Set3Background;
+import Tiles.Backgrounds.Set3.Set3Hills;
+import Tiles.Backgrounds.Set3.Set3Tiles;
+import Tiles.Backgrounds.Set4.Set4Background;
+import Tiles.Backgrounds.Set4.Set4Hills;
+import Tiles.Backgrounds.Set4.Set4Tiles;
 import Tiles.Blue.*;
 import Tiles.Brown.*;
 import Tiles.Green.*;
@@ -16,7 +24,10 @@ import Tiles.Plants.Blue.*;
 import Tiles.Plants.Gray.*;
 import Tiles.Plants.Green.*;
 import Tiles.Plants.Red.*;
-import Tiles.Water.Water;
+import Tiles.Water.WaterBlue;
+import Tiles.Water.WaterBrown;
+import Tiles.Water.WaterGreen;
+import Tiles.Water.WaterRed;
 import Tiles.Yellow.*;
 
 import java.awt.*;
@@ -104,7 +115,10 @@ public class Tile {
     public static Tile plat_gray_6 = new PlatGray6(75);
 
     //WATER
-    public static Tile water = new Water(80);
+    public static Tile water_blue = new WaterBlue(80);
+    public static Tile water_brown = new WaterBrown(81);
+    public static Tile water_green = new WaterGreen(82);
+    public static Tile water_red = new WaterRed(83);
 
     //ITEMS
     public static Tile aura = new Aura(90);
@@ -112,11 +126,22 @@ public class Tile {
     public static Tile speed = new Speed(92);
     public static Tile armor = new Armor(93);
 
-    //BACKGROUNDS
-    public static Tile set2_background= new Set2Background(100);
-    public static Tile set2_hills = new Set2Hills(101);
-    public static Tile set2_tiles = new Set2Tiles(102);
-    public static Tile realistic = new Realistic(103);
+    // BACKGROUNDS
+    public static Tile set1_background = new Set1Background(100);
+    public static Tile set1_hills = new Set1Hills(101);
+    public static Tile set1_tiles = new Set1Tiles(102);
+
+    public static Tile set2_background = new Set2Background(103);
+    public static Tile set2_hills = new Set2Hills(104);
+    public static Tile set2_tiles = new Set2Tiles(105);
+
+    public static Tile set3_background = new Set3Background(106);
+    public static Tile set3_hills = new Set3Hills(107);
+    public static Tile set3_tiles = new Set3Tiles(108);
+
+    public static Tile set4_background = new Set4Background(109);
+    public static Tile set4_hills = new Set4Hills(110);
+    public static Tile set4_tiles = new Set4Tiles(111);
 
     // Class
     // =====================================
@@ -129,8 +154,9 @@ public class Tile {
 
     /**
      * Constructor
+     *
      * @param texture -> Buffered Image / Texture
-     * @param id -> Id of the tile
+     * @param id      -> Id of the tile
      */
     public Tile(BufferedImage texture, int id) {
         this.texture = texture;
@@ -152,9 +178,10 @@ public class Tile {
     /**
      * This method is called every frame when a tile
      * needs to be rendered
+     *
      * @param graphics -> Graphics Object
-     * @param x -> X Position
-     * @param y -> Y Position
+     * @param x        -> X Position
+     * @param y        -> Y Position
      */
     public void render(Graphics graphics, int x, int y) {
         graphics.drawImage(texture, x, y, TILE_WIDTH, TILE_HEIGHT, null);
@@ -163,6 +190,7 @@ public class Tile {
 
     /**
      * Get the id of the tile
+     *
      * @return -> int with Id
      */
     public int getId() {

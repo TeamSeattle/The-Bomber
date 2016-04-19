@@ -20,13 +20,16 @@ public class Player extends Entity {
     public int ARMOUR;
     public int MAX_ARMOUR;
 
+    // Points
+    public int POINTS;
+
     // Animations
     private Animation player_walk_right;
     private Animation player_walk_left;
 
     // Effects
-    protected Effect_Aura aura_eff;
-    protected Effect_Speed speed_eff;
+    public Effect_Aura aura_eff;
+    public Effect_Speed speed_eff;
 
     /**
      * Constructor
@@ -43,6 +46,9 @@ public class Player extends Entity {
         ARMOUR = 3;
         MAX_ARMOUR = 5;
         SPEED = 8F;
+
+        // Points
+        POINTS = 0;
 
         // Animations
         player_walk_left = new Animation(200,Assets.player_walk_left);

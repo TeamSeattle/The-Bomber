@@ -1,4 +1,4 @@
-package Tiles.Backgrounds;
+package Tiles.Backgrounds.Set3;
 
 import Graphics.Assets;
 import Tiles.Tile;
@@ -6,9 +6,9 @@ import Tiles.Tile;
 import java.awt.*;
 
 
-public class Set2Hills extends Tile {
-    public Set2Hills(int id) {
-        super(Assets.set2_hills, id);
+public class Set3Hills extends Tile {
+    public Set3Hills(int id) {
+        super(Assets.set3_hills, id);
     }
 
     @Override

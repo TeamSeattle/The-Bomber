@@ -1,4 +1,4 @@
-package Tiles.Backgrounds;
+package Tiles.Backgrounds.Set2;
 
 import Graphics.Assets;
 import Tiles.Tile;

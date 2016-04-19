@@ -6,11 +6,11 @@ import Utilities.Utilities;
 
 import java.awt.*;
 
-public class Helping_health extends Entity {
+public class Helping_Health extends Entity {
 
     protected float speed = Utilities.getRandom(1,5);
 
-    public Helping_health(float x, float y) {
+    public Helping_Health(float x, float y) {
         super(x,y);
         speed = 2;
     }

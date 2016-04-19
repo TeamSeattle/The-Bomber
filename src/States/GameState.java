@@ -11,11 +11,10 @@
 package States;
 
 import DIsplay.UI;
-import Entities.Helping.BonusController;
-import Entities.Helping.Helping_health;
-import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
 import Entities.Enemies.EnemyController;
+import Entities.Enemies.Enemy_level_1;
+import Entities.Helping.BonusController;
 import Graphics.Assets;
 import Input.KeyManager;
 import Main.Engine;
@@ -32,7 +31,6 @@ public class GameState extends State {
     private EnemyController enemyController;
     private World world;
     private Enemy_level_1 enemy;
-    private Helping_health healthObject;
     private BonusController powerUpsController;
     private UI ui;
 
@@ -112,19 +110,4 @@ public class GameState extends State {
         return player;
     }
 
-    public float getObjectCount() {
-        return enemyCount;
-    }
-
-    public float getEnemiesCount() {
-        return enemyCount;
-    }
-
-    public void setEnemiesCount(float enemyCount) {
-        this.enemyCount = enemyCount;
-    }
-
-    public void setObjectCount(float enemyCount) {
-        this.enemyCount = enemyCount;
-    }
 }

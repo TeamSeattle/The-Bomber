@@ -85,17 +85,32 @@ public class Assets {
     public static BufferedImage plat_gray_6;
 
     // WATER
-    public static BufferedImage water;
+    public static BufferedImage water_blue;
+    public static BufferedImage water_green;
+    public static BufferedImage water_red;
+    public static BufferedImage water_brown;
 
     // ITEMS
     public static BufferedImage enemy;
     public static BufferedImage healthObject;
 
     // BACKGROUNDS
+    public static BufferedImage set1_background;
+    public static BufferedImage set1_hills;
+    public static BufferedImage set1_tiles;
+
     public static BufferedImage set2_background;
     public static BufferedImage set2_hills;
     public static BufferedImage set2_tiles;
-    public static BufferedImage realistic;
+
+    public static BufferedImage set3_background;
+    public static BufferedImage set3_hills;
+    public static BufferedImage set3_tiles;
+
+    public static BufferedImage set4_background;
+    public static BufferedImage set4_hills;
+    public static BufferedImage set4_tiles;
+
     public static BufferedImage menu_background;
     public static BufferedImage darken;
 
@@ -116,7 +131,9 @@ public class Assets {
     public static BufferedImage armor;
     public static BufferedImage armor_empty;
     public static BufferedImage aura;
+    public static BufferedImage aura_on_player;
     public static BufferedImage speed;
+    public static BufferedImage speed_icon;
 
     // MENU
     public static BufferedImage start_menu_button;
@@ -218,7 +235,10 @@ public class Assets {
         plat_gray_6 = sheet.crop(IMAGE_WIDTH * 11, IMAGE_HEIGHT * 7, IMAGE_WIDTH, IMAGE_HEIGHT);
 
         // WATER
-        water = sheet.crop(IMAGE_WIDTH * 12, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
+        water_blue = sheet.crop(IMAGE_WIDTH * 12, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
+        water_green = sheet.crop(IMAGE_WIDTH * 13, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
+        water_red = sheet.crop(IMAGE_WIDTH * 14, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
+        water_brown = sheet.crop(IMAGE_WIDTH * 15, IMAGE_HEIGHT * 10, IMAGE_WIDTH, IMAGE_HEIGHT * 2);
 
         // ITEMS and Scale to 64x64
         enemy = ImageLoader.loadImage("/textures/Enemies/enemyFloating_1.png");
@@ -226,10 +246,23 @@ public class Assets {
         healthObject = ImageLoader.loadImage("/textures/Enemies/health.png");
 
         // BACKGROUNDS
+        set1_background = ImageLoader.loadImage("/textures/Backgrounds/set1_background.png");
+        set1_hills = ImageLoader.loadImage("/textures/Backgrounds/set1_hills.png");
+        set1_tiles = ImageLoader.loadImage("/textures/Backgrounds/set1_tiles.png");
+
         set2_background = ImageLoader.loadImage("/textures/Backgrounds/set2_background.png");
         set2_hills = ImageLoader.loadImage("/textures/Backgrounds/set2_hills.png");
         set2_tiles = ImageLoader.loadImage("/textures/Backgrounds/set2_tiles.png");
-        realistic = ImageLoader.loadImage("/textures/Backgrounds/realistic.png");
+
+        set3_background = ImageLoader.loadImage("/textures/Backgrounds/set3_background.png");
+        set3_hills = ImageLoader.loadImage("/textures/Backgrounds/set3_hills.png");
+        set3_tiles = ImageLoader.loadImage("/textures/Backgrounds/set3_tiles.png");
+
+        set4_background = ImageLoader.loadImage("/textures/Backgrounds/set4_background.png");
+        set4_hills = ImageLoader.loadImage("/textures/Backgrounds/set4_hills.png");
+        set4_tiles = ImageLoader.loadImage("/textures/Backgrounds/set4_tiles.png");
+
+        // MENU BACKGROUND
         menu_background = ImageLoader.loadImage("/textures/Backgrounds/menu_background.png");
         menu_background = Utilities.scaleImage(menu_background, 1.245, 1.13);
         darken = ImageLoader.loadImage("/textures/Backgrounds/darken.png");
@@ -254,7 +287,9 @@ public class Assets {
         armor = ImageLoader.loadImage("/textures/Player/armor.png");
         armor_empty = ImageLoader.loadImage("/textures/Player/armor_empty.png");
         speed = ImageLoader.loadImage("/textures/Player/speed.png");
+        speed_icon = ImageLoader.loadImage("/textures/Player/speed_icon.png");
         aura = ImageLoader.loadImage("/textures/Player/aura.png");
+        aura_on_player = ImageLoader.loadImage("/textures/Player/aura_player.png");
 
         // MENU
         start_menu_button = ImageLoader.loadImage("/textures/Menu/Button_newgame.png");

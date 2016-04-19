@@ -49,6 +49,7 @@ public class EnemyController {
                 enemy_level_1.setY(yPosition * -1);
                 enemy_level_1.setX(xPosition);
                 enemy_level_1.setSpeed(speed);
+                addPoint();
             }
             enemy_level_1.tick();
         }
@@ -78,6 +79,10 @@ public class EnemyController {
      */
     public void removeEnemies (Enemy_level_1 block){
         enemies_level_1.remove(block);
+    }
+
+    public void addPoint(){
+        gameState.getPlayer().POINTS++;
     }
 
 }

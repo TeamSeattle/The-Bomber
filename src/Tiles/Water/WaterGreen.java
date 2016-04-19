@@ -5,9 +5,10 @@ import Tiles.Tile;
 
 import java.awt.*;
 
-public class Water extends Tile{
-    public Water(int id) {
-        super(Assets.water, id);
+public class WaterGreen extends Tile {
+
+    public WaterGreen(int id) {
+        super(Assets.water_green, id);
     }
 
     private int xTemp = 0;

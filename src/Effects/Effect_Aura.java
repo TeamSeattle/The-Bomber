@@ -33,12 +33,7 @@ public class Effect_Aura {
      */
     public void render(Graphics graphics , int x, int y){
         // DRAW ON PLAYER
-        graphics.drawImage(Assets.aura,x + 32,y + 32,null);
-        // DRAW CORNER
-        graphics.setColor(Color.white);
-        graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
-        graphics.drawImage(Assets.aura,10,10,null);
-        graphics.drawString(time / 60 + 1 + "",65,85);
+        graphics.drawImage(Assets.aura_on_player,x + 32,y + 32,null);
     }
 
     /**
@@ -55,5 +50,9 @@ public class Effect_Aura {
      */
     public boolean getIsActive(){
         return isActive;
+    }
+
+    public int getTimeLeft(){
+        return time / 60 + 1;
     }
 }

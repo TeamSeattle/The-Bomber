@@ -15,20 +15,22 @@ public class World {
     private int[] background;
     private int bottomBackground;
     private int[][] foreground;
+    private int waterID;
     private boolean isThereWaterLine;
 
     /**
      * Constructor
+     *
      * @param path -> Path to the world file
      */
-    public World(String path){
+    public World(String path) {
         loadWorld(path);
     }
 
     /**
      * This method is called every frame
      */
-    public void tick(){
+    public void tick() {
 
     }
 
@@ -38,31 +40,32 @@ public class World {
      * After we load the world into our matrix we
      * can render it.
      * The render order is important
+     *
      * @param graphics -> Take Graphics Object
      */
-    public void render(Graphics graphics){
+    public void render(Graphics graphics) {
         // Render Main Background
         for (int code : background) {
-            geTile(code).render(graphics,0,0);
+            geTile(code).render(graphics, 0, 0);
         }
 
         // Render bottom Background
         for (int x = 0; x < WORLD_WIDTH; x++) {
             for (int y = 12; y < WORLD_HEIGHT; y++) {
-                geTile(bottomBackground).render(graphics, x * 64,y * 64);
+                geTile(bottomBackground).render(graphics, x * 64, y * 64);
             }
         }
 
         // Render foreground
         for (int x = 0; x < WORLD_WIDTH; x++) {
             for (int y = 0; y < WORLD_HEIGHT; y++) {
-                geTile(x,y).render(graphics,x * 64,y * 64);
+                geTile(x, y).render(graphics, x * 64, y * 64);
             }
         }
 
-        // Render water
-        if (isThereWaterLine){
-            geTile(80).render(graphics,64 * 14,64 * 14);
+        // Render water_blue
+        if (isThereWaterLine) {
+            geTile(waterID).render(graphics, 64 * 14, 64 * 14);
         }
     }
 
@@ -71,13 +74,14 @@ public class World {
      * # First Overload
      * This method returns a Tile object
      * from a specific code
+     *
      * @param x ->
      * @param y ->
      * @return -> The tile with that index
      */
-    private Tile geTile(int x, int y){
+    private Tile geTile(int x, int y) {
         Tile tile = Tile.tiles[foreground[y][x]];
-        if (tile == null){
+        if (tile == null) {
             return Tile.empty;
         }
         return tile;
@@ -88,12 +92,13 @@ public class World {
      * # Second Overload
      * This method returns a Tile object
      * from a specific code
+     *
      * @param code -> Index of the tile
      * @return -> The tile with that index
      */
-    private Tile geTile(int code){
+    private Tile geTile(int code) {
         Tile tile = Tile.tiles[code];
-        if (tile == null){
+        if (tile == null) {
             return Tile.empty;
         }
         return tile;
@@ -103,9 +108,10 @@ public class World {
     /**
      * This is the main method where we load the whole world
      * from a file of choice.
+     *
      * @param path -> path to the file
      */
-    private void loadWorld(String path){
+    private void loadWorld(String path) {
 
         background = new int[3];
         foreground = new int[WORLD_HEIGHT][WORLD_WIDTH];
@@ -120,14 +126,14 @@ public class World {
 
             // region Load Background
             line = bufferedReader.readLine();
-            if (line.equals("#background")){
+            if (line.equals("#background")) {
                 loadBackground(bufferedReader.readLine());
             }
             // endregion
 
             // region Load Foreground
             line = bufferedReader.readLine();
-            if (line.equals("#foreground")){
+            if (line.equals("#foreground")) {
                 int row = 0;
                 while (!(line = bufferedReader.readLine()).equals("#bottomBackground")) {
 
@@ -143,7 +149,7 @@ public class World {
             // endregion
 
             // region Load bottom background
-            if (line.equals("#bottomBackground")){
+            if (line.equals("#bottomBackground")) {
                 line = bufferedReader.readLine();
                 bottomBackground = Integer.parseInt(line);
             }
@@ -151,10 +157,15 @@ public class World {
 
             // region Load waterline
             line = bufferedReader.readLine();
-            if (line.equals("#waterLine")){
+            if (line.equals("#waterLine")) {
                 line = bufferedReader.readLine();
-                if (line.equals("true")) isThereWaterLine = true;
-                else isThereWaterLine = false;
+                String[] inWaterProp = line.split(" ");
+                if (inWaterProp[0].equals("true")) {
+                    isThereWaterLine = true;
+                } else {
+                    isThereWaterLine = false;
+                }
+                waterID = Integer.parseInt(inWaterProp[1]);
             }
             // endregion
 
@@ -173,9 +184,10 @@ public class World {
 
     /**
      * This method loads the main background of the world
+     *
      * @param input -> background codes
      */
-    private void loadBackground(String input){
+    private void loadBackground(String input) {
         String[] backgroundInput = input.split("\\s+");
         for (int i = 0; i < 3; i++) {
             background[i] = Integer.parseInt(backgroundInput[i]);
@@ -186,7 +198,7 @@ public class World {
     /**
      * This method will show us what is loaded for the world
      */
-    private void printDebugInfo(){
+    private void printDebugInfo() {
         // Print for debugging
         System.out.println("Map:");
         for (int x = 0; x < WORLD_HEIGHT; x++) {
@@ -196,6 +208,6 @@ public class World {
             System.out.println("");
         }
         System.out.println("Bottom Background code: " + bottomBackground);
-        System.out.println("Waterline: " +isThereWaterLine);
+        System.out.println("Waterline: " + isThereWaterLine + " ID: " + waterID);
     }
 }
