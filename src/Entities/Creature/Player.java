@@ -1,6 +1,6 @@
 package Entities.Creature;
 
-import DIsplay.Display;
+import Display.Display;
 import Effects.Effect_Aura;
 import Effects.Effect_Speed;
 import Entities.Entity;
@@ -66,7 +66,7 @@ public class Player extends Entity {
             }
         }
         if (KeyManager.right) {
-            if (x < Display.WINDOW_WIDTH -56) {
+            if (x <Display.WINDOW_WIDTH -56) {
                 x += SPEED;
             }
         }
