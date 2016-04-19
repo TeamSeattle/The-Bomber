@@ -1,6 +1,6 @@
 #leveldata
 #background
-100 101 102
+106 107 108
 #foreground
 00 00 00 00 00 00 00 00 00 00 00 00 00 00
 00 00 00 00 00 00 00 00 00 00 00 00 00 00
@@ -20,4 +20,4 @@
 #bottomBackground
 20
 #waterLine
-true
+true 80

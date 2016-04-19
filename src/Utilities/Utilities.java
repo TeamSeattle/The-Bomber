@@ -9,6 +9,7 @@
 
 package Utilities;
 
+import java.awt.*;
 import  java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -62,5 +63,29 @@ public class Utilities {
     public static int getRandom(int min,int max){
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
+    }
+
+    /**
+     * This method will check if the two bounding boxes intersect
+     * in some way
+     * @param one -> Always Player Bounding Box
+     * @param two -> Other Bounding box
+     * @return -> True / False
+     */
+    public static boolean isInImpact(Rectangle one, Rectangle two){
+        return one.intersects(two);
+    }
+
+    /**
+     * This method will pause the game for X amount of seconds
+     * @param seconds -> How many seconds
+     */
+    public static void sleep(double seconds){
+        try {
+            Thread.sleep((long) seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            System.out.println("");
+        }
     }
 }

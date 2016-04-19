@@ -1,4 +1,4 @@
-package DIsplay.Menus;
+package DIsplay.Menus.OtherButtons;
 
 import Graphics.Assets;
 import Input.MouseManager;

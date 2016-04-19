@@ -12,9 +12,11 @@
 
 package States;
 
-import DIsplay.Menus.ExitButton;
-import DIsplay.Menus.StartNewGameButton;
-import DIsplay.Menus.VolumeButton;
+import DIsplay.Menus.ExitButtons.ExitButtonMainMenu;
+import DIsplay.Menus.LevelButtons.LevelButton;
+import DIsplay.Menus.OtherButtons.InfoButton;
+import DIsplay.Menus.OtherButtons.StartNewGameButton;
+import DIsplay.Menus.OtherButtons.VolumeButton;
 import Main.Engine;
 import Graphics.Assets;
 
@@ -37,7 +39,9 @@ public class MenuState extends State {
         // Tick all the buttons
         StartNewGameButton.tick();
         VolumeButton.tick();
-        ExitButton.tick();
+        LevelButton.tick();
+        InfoButton.tick();
+        ExitButtonMainMenu.tick();
     }
 
     @Override
@@ -54,7 +58,9 @@ public class MenuState extends State {
         // Render all the buttons
         StartNewGameButton.render(graphics);
         VolumeButton.render(graphics);
-        ExitButton.render(graphics);
+        LevelButton.render(graphics);
+        InfoButton.render(graphics);
+        ExitButtonMainMenu.render(graphics);
     }
 
 

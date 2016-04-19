@@ -11,9 +11,8 @@
 package States;
 
 import DIsplay.UI;
+import Entities.Entity;
 import Entities.Helping.BonusController;
-import Entities.Helping.Helping_Health;
-import Entities.Enemies.Enemy_level_1;
 import Entities.Creature.Player;
 import Entities.Enemies.EnemyController;
 import Graphics.Assets;
@@ -26,15 +25,16 @@ import java.awt.*;
 public class GameState extends State {
 
     private float enemyCount = 25;
-    private float powerUpsCount = 1;
+    private float powerUpsCount = 100;
     //Create time player with name "player",for the test :)
     private Player player;
     private EnemyController enemyController;
     private World world;
-    private Enemy_level_1 enemy;
-    private Helping_Health healthObject;
     private BonusController powerUpsController;
     private UI ui;
+
+    // Level
+    public static String level = "level_1";
 
 
     /**
@@ -50,11 +50,10 @@ public class GameState extends State {
     private void initialize(){
 
         // Create world
-        world = new World("level_1");
+        world = new World(level);
 
         // Create time player
         player = new Player(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 10 - 5);
-        enemy = new Enemy_level_1(Assets.IMAGE_WIDTH * 6, Assets.IMAGE_HEIGHT * 9 + 33);
         ui = new UI(this);
 
         // Initialize Enemies
@@ -63,7 +62,7 @@ public class GameState extends State {
 
         // Initialize Power-ups
         powerUpsController = new BonusController(this);
-        powerUpsController.createHealthObject(powerUpsCount);
+        powerUpsController.createBonuses(powerUpsCount);
     }
 
     private int time = 0;
@@ -78,10 +77,15 @@ public class GameState extends State {
             PauseState.resetTime();
         }
 
+        if (KeyManager.boundsSwitch && time > 20){
+            Entity.boundsToggle = !Entity.boundsToggle;
+            System.out.println("BOUNDS : " + Entity.boundsToggle);
+            time = 0;
+        }
+
         // WORLD
         world.tick();
         // ENEMY
-        enemy.tick();
         enemyController.tick();
         // BONUSES
         powerUpsController.tick();

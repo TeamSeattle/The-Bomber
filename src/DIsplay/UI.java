@@ -1,7 +1,10 @@
 package DIsplay;
 
 import Graphics.Assets;
+import Main.Engine;
 import States.GameState;
+import States.StateManager;
+import Utilities.Utilities;
 
 import java.awt.*;
 
@@ -13,8 +16,10 @@ public class UI {
         this.gameState = state;
     }
 
-    public void tick() {
+    private int time = 1000;
 
+    public void tick() {
+        time--;
     }
 
     /**
@@ -84,14 +89,14 @@ public class UI {
 
         // Render Aura effect data
         if (gameState.getPlayer().aura_eff.getIsActive()) {
-            graphics.drawString(gameState.getPlayer().aura_eff.getTimeLeft() + " ", 896 - 94 * 2 + 50, 47);
+            graphics.drawString(gameState.getPlayer().aura_eff.getTimeLeft() + " ", 758, 47);
         } else {
             graphics.drawString("NONE", 728, 47);
         }
 
         // Render Speed effect data
         if (gameState.getPlayer().speed_eff.getIsActive()) {
-            graphics.drawString(gameState.getPlayer().speed_eff.getTimeLeft() + " ", 896 - 94 * 2 + 50, 45 + 70);
+            graphics.drawString(gameState.getPlayer().speed_eff.getTimeLeft() + " ", 758, 115);
         } else {
             graphics.drawString("NONE", 728, 45 + 70);
         }

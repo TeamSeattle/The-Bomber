@@ -58,6 +58,7 @@ public class Engine implements Runnable {
     public static State menuState;
     public static State deadState;
     public static State pauseState;
+    public static State levelPickerState;
 
     //Input
     private KeyManager keyManager;
@@ -65,7 +66,6 @@ public class Engine implements Runnable {
 
     // Volume Boolean
     public static boolean volume;
-
 
     /**
      * Constructor
@@ -141,6 +141,7 @@ public class Engine implements Runnable {
         menuState = new MenuState(this);
         deadState = new DeadState(this);
         pauseState = new PauseState(this);
+        levelPickerState = new LevelPickerState(this);
         StateManager.setCurrentState(menuState);
 
         // Volume

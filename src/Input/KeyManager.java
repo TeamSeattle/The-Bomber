@@ -11,6 +11,8 @@ public class KeyManager implements KeyListener {
     public static boolean escape;
     public static boolean auraSwitch;
     public static boolean speedSwitch;
+    public static boolean boundsSwitch;
+    public static boolean killYourSelf;
 
     public KeyManager() {
         keys = new boolean[256];
@@ -22,6 +24,8 @@ public class KeyManager implements KeyListener {
         escape = keys[KeyEvent.VK_ESCAPE];
         auraSwitch = keys[KeyEvent.VK_E];
         speedSwitch = keys[KeyEvent.VK_W];
+        boundsSwitch = keys[KeyEvent.VK_F1];
+        killYourSelf = keys[KeyEvent.VK_F2];
     }
 
     @Override

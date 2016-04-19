@@ -1,8 +1,9 @@
 package States;
 
-import DIsplay.Menus.ResumeButton;
-import DIsplay.Menus.ToMainMenuButton;
-import DIsplay.Menus.VolumeButton;
+import DIsplay.Menus.OtherButtons.RestartGameButton;
+import DIsplay.Menus.OtherButtons.ResumeButton;
+import DIsplay.Menus.ToMainMenuButtons.ToMainMenuButton;
+import DIsplay.Menus.OtherButtons.VolumeButton;
 import Input.KeyManager;
 import Main.Engine;
 import Graphics.Assets;
@@ -28,6 +29,7 @@ public class PauseState extends State {
         // Tick all the buttons
         ResumeButton.tick();
         VolumeButton.tick();
+        RestartGameButton.tick();
         ToMainMenuButton.tick();
 
         // Update System value
@@ -47,6 +49,7 @@ public class PauseState extends State {
         // Render all the buttons
         ResumeButton.render(graphics);
         VolumeButton.render(graphics);
+        RestartGameButton.render(graphics);
         ToMainMenuButton.render(graphics);
     }
 

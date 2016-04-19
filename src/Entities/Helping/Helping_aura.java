@@ -5,14 +5,15 @@ import Graphics.Assets;
 import Utilities.Utilities;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 public class Helping_aura extends Entity {
 
-    protected float speed = Utilities.getRandom(1,5);
+    protected float speed = Utilities.getRandom(1, 5);
+    private static BufferedImage aura = Assets.aura;
 
     public Helping_aura(float x, float y) {
-        super(x, y);
-        speed = 2;
+        super(x, y, aura.getWidth(), aura.getHeight());
     }
 
     /**
@@ -21,15 +22,26 @@ public class Helping_aura extends Entity {
     @Override
     public void tick() {
         y += speed;
+
+        // Update Bounding box
+        bounds.x = (int) x;
+        bounds.y = (int) y;
     }
 
     /**
      * Renders the current power-up to the screen
+     *
      * @param graphics -> Required
      */
     @Override
     public void render(Graphics graphics) {
-        graphics.drawImage(Assets.aura, (int) x, (int) y, null);
+        // Render Effect
+        graphics.drawImage(aura, (int) x, (int) y, null);
+        // Bounding box
+        if (boundsToggle) {
+            graphics.setColor(Color.BLUE);
+            graphics.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+        }
     }
 
     public float getY() {

@@ -1,7 +1,7 @@
 package Entities.Enemies;
 
-import Main.Engine;
 import States.GameState;
+import Graphics.Assets;
 import Utilities.Utilities;
 
 import java.awt.*;
@@ -9,10 +9,12 @@ import java.util.LinkedList;
 
 public class EnemyController {
 
+    // DEAD LINE
+    private static final int DEAD_LINE = 700;
+
     private LinkedList<Enemy_level_1> enemies_level_1 = new LinkedList<>();
 
-    private Engine engine;
-    private GameState gameState;
+    public static GameState gameState;
 
     /**
      * Constructor
@@ -28,8 +30,10 @@ public class EnemyController {
      */
     public void createEnemies(float enemyCount){
         for (int i=0; i < enemyCount; i++){
+            // Values
             int xPosition = Utilities.getRandom(1,896);
             int yPosition = Utilities.getRandom(200,400);
+
             addEnemies(new Enemy_level_1(xPosition,yPosition * -1));
         }
     }
@@ -39,12 +43,18 @@ public class EnemyController {
      * Updates there values
      */
     public void tick(){
-        for (Enemy_level_1 enemy_level_1 : enemies_level_1) {
-            int xPosition = Utilities.getRandom(1,896);
-            int yPosition = Utilities.getRandom(200,400);
-            int speed = Utilities.getRandom(1,5);
+        tickEnemylevel1();
+    }
 
-            if (enemy_level_1.getY() > 650) {
+    /**
+     * Ticks the properties of enemy level 1
+     */
+    private void tickEnemylevel1(){
+        for (Enemy_level_1 enemy_level_1 : enemies_level_1) {
+            if (enemy_level_1.getY() > DEAD_LINE) {
+                int xPosition = Utilities.getRandom(1,896);
+                int yPosition = Utilities.getRandom(200,400);
+                int speed = Utilities.getRandom(1,5);
                 // Set values
                 enemy_level_1.setY(yPosition * -1);
                 enemy_level_1.setX(xPosition);
@@ -81,7 +91,10 @@ public class EnemyController {
         enemies_level_1.remove(block);
     }
 
-    public void addPoint(){
+    /**
+     * Add points to the player
+     */
+    private void addPoint(){
         gameState.getPlayer().POINTS++;
     }
 

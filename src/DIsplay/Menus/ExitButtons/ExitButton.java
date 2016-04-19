@@ -1,4 +1,4 @@
-package DIsplay.Menus;
+package DIsplay.Menus.ExitButtons;
 
 import Input.MouseManager;
 
@@ -8,7 +8,7 @@ import Graphics.Assets;
 
 public class ExitButton {
 
-    private static int time = 0;
+    public static int time = 0;
 
     /**
      * Ticks every time when called
@@ -38,7 +38,7 @@ public class ExitButton {
         }
     }
 
-    static void resetTime() {
+    public static void resetTime() {
         time = 0;
     }
 }

@@ -150,7 +150,30 @@ public class Assets {
     public static BufferedImage volume_off_menu_button_hover;
     public static BufferedImage to_main_menu;
     public static BufferedImage to_main_menu_hover;
+    public static BufferedImage restart_button;
+    public static BufferedImage restart_button_hover;
+    public static BufferedImage level_button;
+    public static BufferedImage level_button_hover;
+    public static BufferedImage back_button;
+    public static BufferedImage back_button_hover;
+    public static BufferedImage info_button;
+    public static BufferedImage info_button_hover;
 
+    public static BufferedImage level_1;
+    public static BufferedImage level_1_hover;
+    public static BufferedImage level_1_selected;
+
+    public static BufferedImage level_2;
+    public static BufferedImage level_2_hover;
+    public static BufferedImage level_2_selected;
+
+    public static BufferedImage level_3;
+    public static BufferedImage level_3_hover;
+    public static BufferedImage level_3_selected;
+
+    public static BufferedImage level_4;
+    public static BufferedImage level_4_hover;
+    public static BufferedImage level_4_selected;
     // IN-GAME
     public static BufferedImage in_game_settings;
 
@@ -300,6 +323,19 @@ public class Assets {
         volume_off_menu_button = ImageLoader.loadImage("/textures/Menu/Button_volume_off.png");
         in_game_settings = ImageLoader.loadImage("/textures/menu/settings-9.png");
         to_main_menu = ImageLoader.loadImage("/textures/menu/Button_to_main_menu.png");
+        restart_button = ImageLoader.loadImage("/textures/menu/Button_restart.png");
+        level_button = ImageLoader.loadImage("/textures/menu/Button_level.png");
+        back_button = ImageLoader.loadImage("/textures/menu/Button_back.png");
+        info_button = ImageLoader.loadImage("/textures/menu/Button_info.png");
+
+        level_1 = ImageLoader.loadImage("/textures/menu/Button_level_1.png");
+        level_1_selected = ImageLoader.loadImage("/textures/menu/Button_level_1_selected.png");
+        level_2  = ImageLoader.loadImage("/textures/menu/Button_level_2.png");
+        level_2_selected = ImageLoader.loadImage("/textures/menu/Button_level_2_selected.png");
+        level_3 = ImageLoader.loadImage("/textures/menu/Button_level_3.png");
+        level_3_selected = ImageLoader.loadImage("/textures/menu/Button_level_3_selected.png");
+        level_4 = ImageLoader.loadImage("/textures/menu/Button_level_4.png");
+        level_4_selected = ImageLoader.loadImage("/textures/menu/Button_level_4_selected.png");
 
         // HOVER
         start_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_newgame_hover.png");
@@ -309,6 +345,15 @@ public class Assets {
         volume_on_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_on_hover.png");
         volume_off_menu_button_hover = ImageLoader.loadImage("/textures/Menu/Button_volume_off_hover.png");
         to_main_menu_hover = ImageLoader.loadImage("/textures/menu/Button_to_main_menu_hover.png");
+        restart_button_hover = ImageLoader.loadImage("/textures/menu/Button_restart_hover.png");
+        level_button_hover = ImageLoader.loadImage("/textures/menu/Button_level_hover.png");
+        back_button_hover = ImageLoader.loadImage("/textures/menu/Button_back_hover.png");
+        info_button_hover = ImageLoader.loadImage("/textures/menu/Button_info_hover.png");
+
+        level_1_hover = ImageLoader.loadImage("/textures/menu/Button_level_1_hover.png");
+        level_2_hover = ImageLoader.loadImage("/textures/menu/Button_level_2_hover.png");
+        level_3_hover = ImageLoader.loadImage("/textures/menu/Button_level_3_hover.png");
+        level_4_hover = ImageLoader.loadImage("/textures/menu/Button_level_4_hover.png");
 
         printInfo();
     }

@@ -1,15 +1,14 @@
-package DIsplay.Menus;
+package DIsplay.Menus.OtherButtons;
 
+import Graphics.Assets;
 import Input.MouseManager;
+import Main.Engine;
+import States.GameState;
+import States.StateManager;
 
 import java.awt.*;
 
-import Graphics.Assets;
-import Main.Engine;
-import States.PauseState;
-import States.StateManager;
-
-public class ResumeButton {
+public class RestartGameButton {
 
     private static int time = 0;
 
@@ -19,27 +18,27 @@ public class ResumeButton {
     public static void tick() {
         if (MouseManager.isClicked == 1 &&
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
-                (MouseManager.getY > 400 && MouseManager.getY < 470) &&
+                (MouseManager.getY > 600 && MouseManager.getY < 670) &&
                 time > 20) {
+            Engine.gameState = new GameState(Engine.getEngine());
             StateManager.setCurrentState(Engine.gameState);
             System.out.println("SWITCHED STATE : GameState");
             time = 0;
-            PauseState.resetTime();
         }
         time++;
     }
 
     /**
-     * Renders the resume to game button
+     * Renders the start new game button for the menu
      *
      * @param graphics -> Required
      */
     public static void render(Graphics graphics) {
         if ((MouseManager.getX > 347 && MouseManager.getX < 550) &&
-                (MouseManager.getY > 400 && MouseManager.getY < 470)) {
-            graphics.drawImage(Assets.resume_menu_button_hover, 347, 400, null);
+                (MouseManager.getY > 600 && MouseManager.getY < 670)) {
+            graphics.drawImage(Assets.restart_button_hover, 347, 600, null);
         } else {
-            graphics.drawImage(Assets.resume_menu_button, 347, 400, null);
+            graphics.drawImage(Assets.restart_button, 347, 600, null);
         }
     }
 }

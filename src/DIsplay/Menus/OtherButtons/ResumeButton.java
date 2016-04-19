@@ -1,4 +1,4 @@
-package DIsplay.Menus;
+package DIsplay.Menus.OtherButtons;
 
 import Input.MouseManager;
 
@@ -6,10 +6,10 @@ import java.awt.*;
 
 import Graphics.Assets;
 import Main.Engine;
-import States.GameState;
+import States.PauseState;
 import States.StateManager;
 
-public class StartNewGameButton {
+public class ResumeButton {
 
     private static int time = 0;
 
@@ -21,25 +21,25 @@ public class StartNewGameButton {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 400 && MouseManager.getY < 470) &&
                 time > 20) {
-            Engine.gameState = new GameState(Engine.getEngine());
             StateManager.setCurrentState(Engine.gameState);
             System.out.println("SWITCHED STATE : GameState");
             time = 0;
+            PauseState.resetTime();
         }
         time++;
     }
 
     /**
-     * Renders the start new game button for the menu
+     * Renders the resume to game button
      *
      * @param graphics -> Required
      */
     public static void render(Graphics graphics) {
         if ((MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 400 && MouseManager.getY < 470)) {
-            graphics.drawImage(Assets.start_menu_button_hover, 347, 400, null);
+            graphics.drawImage(Assets.resume_menu_button_hover, 347, 400, null);
         } else {
-            graphics.drawImage(Assets.start_menu_button, 347, 400, null);
+            graphics.drawImage(Assets.resume_menu_button, 347, 400, null);
         }
     }
 }

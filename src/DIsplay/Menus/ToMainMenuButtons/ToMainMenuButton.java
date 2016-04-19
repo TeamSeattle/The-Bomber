@@ -1,5 +1,6 @@
-package DIsplay.Menus;
+package DIsplay.Menus.ToMainMenuButtons;
 
+import DIsplay.Menus.ExitButtons.ExitButton;
 import Input.MouseManager;
 
 import java.awt.*;
