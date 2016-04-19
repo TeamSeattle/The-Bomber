@@ -10,7 +10,7 @@
 
 package States;
 
-import DIsplay.UI;
+import Display.UI;
 import Entities.Helping.BonusController;
 import Entities.Helping.Helping_Health;
 import Entities.Enemies.Enemy_level_1;

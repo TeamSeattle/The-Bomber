@@ -1,4 +1,4 @@
-package DIsplay;
+package Display;
 
 import Graphics.Assets;
 import States.GameState;
