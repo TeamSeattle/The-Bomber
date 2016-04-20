@@ -39,7 +39,7 @@ public class InfoButton {
         }
     }
 
-    static void resetTime() {
+    public static void resetTime() {
         time = 0;
     }
 }

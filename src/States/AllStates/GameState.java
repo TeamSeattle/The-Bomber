@@ -8,7 +8,7 @@
  *1
  */
 
-package States;
+package States.AllStates;
 
 import DIsplay.UI;
 import Entities.Entity;
@@ -18,6 +18,8 @@ import Entities.Enemies.EnemyController;
 import Graphics.Assets;
 import Input.KeyManager;
 import Main.Engine;
+import States.State;
+import States.StateManager;
 import Worlds.World;
 
 import java.awt.*;
@@ -41,7 +43,7 @@ public class GameState extends State {
      */
     public GameState(Engine engine) {
         super(engine);
-        name = "Game";
+        name = "Game_State";
 
         initialize();
     }

@@ -9,7 +9,7 @@
  *
  */
 
-package States;
+package States.AllStates;
 
 import DIsplay.Menus.ExitButtons.ExitButton;
 import DIsplay.Menus.OtherButtons.StartNewGameButton;
@@ -17,10 +17,11 @@ import DIsplay.Menus.ToMainMenuButtons.ToMainMenuButtonDead;
 import Entities.Creature.Player;
 import Main.Engine;
 import Graphics.Assets;
+import States.State;
 
 import java.awt.*;
 
-public class DeadState extends State{
+public class DeadState extends State {
 
     private Engine engine;
     /**
@@ -28,7 +29,7 @@ public class DeadState extends State{
      */
     public DeadState(Engine engine){
         super(engine);
-        name = "Dead";
+        name = "Dead_State";
         this.engine = engine;
     }
 

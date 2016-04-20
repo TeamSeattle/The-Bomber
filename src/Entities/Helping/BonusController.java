@@ -1,6 +1,6 @@
 package Entities.Helping;
 
-import States.GameState;
+import States.AllStates.GameState;
 import Utilities.Utilities;
 
 import java.awt.*;
@@ -8,10 +8,10 @@ import java.util.LinkedList;
 
 public class BonusController {
 
-    private LinkedList<Helping_Health> health_drops = new LinkedList<>();
-    private LinkedList<Helping_armor> armor_drops = new LinkedList<>();
-    private LinkedList<Helping_aura> aura_drops = new LinkedList<>();
-    private LinkedList<Helping_speed> speed_drops = new LinkedList<>();
+    private LinkedList<Helping_Health> health_drops = new LinkedList<Helping_Health>();
+    private LinkedList<Helping_armor> armor_drops = new LinkedList<Helping_armor>();
+    private LinkedList<Helping_aura> aura_drops = new LinkedList<Helping_aura>();
+    private LinkedList<Helping_speed> speed_drops = new LinkedList<Helping_speed>();
 
     // VALUES
     private int yMin = 3000;

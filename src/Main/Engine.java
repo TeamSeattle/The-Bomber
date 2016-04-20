@@ -34,6 +34,8 @@ import Graphics.Assets;
 import Input.KeyManager;
 import Input.MouseManager;
 import States.*;
+import States.AllStates.*;
+import Statistics.Statistics;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -53,6 +55,9 @@ public class Engine implements Runnable {
     public BufferStrategy bufferStrategy;
     public static Graphics graphics;
 
+    // Stats
+    public static Statistics statistics;
+
     // All the states
     public static State gameState;
     public static State menuState;
@@ -60,6 +65,8 @@ public class Engine implements Runnable {
     public static State pauseState;
     public static State levelPickerState;
     public static State infoState;
+    public static State statsState;
+    public static State exitState;
 
     //Input
     private KeyManager keyManager;
@@ -137,6 +144,9 @@ public class Engine implements Runnable {
         // Initialize assets
         Assets.initialize();
 
+        // Stats
+        statistics = new Statistics();
+
         // Initialize states
         gameState = new GameState(this);
         menuState = new MenuState(this);
@@ -144,6 +154,8 @@ public class Engine implements Runnable {
         pauseState = new PauseState(this);
         levelPickerState = new LevelPickerState(this);
         infoState = new InfoState(this);
+        statsState = new StatsState(this);
+        exitState = new ExitPromptState(this);
         StateManager.setCurrentState(menuState);
 
         // Volume

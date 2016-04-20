@@ -2,6 +2,7 @@ package DIsplay.Menus.ToMainMenuButtons;
 
 import DIsplay.Menus.ExitButtons.ExitButton;
 import DIsplay.Menus.LevelButtons.LevelButton;
+import DIsplay.Menus.OtherButtons.InfoButton;
 import Graphics.Assets;
 import Input.MouseManager;
 import Main.Engine;
@@ -26,6 +27,7 @@ public class ToMainMenuButtonDead {
             time = 0;
             ExitButton.resetTime();
             LevelButton.resetTime();
+            InfoButton.resetTime();
         }
         time++;
     }

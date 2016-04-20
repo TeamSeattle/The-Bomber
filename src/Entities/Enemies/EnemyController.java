@@ -1,7 +1,6 @@
 package Entities.Enemies;
 
-import States.GameState;
-import Graphics.Assets;
+import States.AllStates.GameState;
 import Utilities.Utilities;
 
 import java.awt.*;
@@ -12,7 +11,7 @@ public class EnemyController {
     // DEAD LINE
     private static final int DEAD_LINE = 700;
 
-    private LinkedList<Enemy_level_1> enemies_level_1 = new LinkedList<>();
+    private LinkedList<Enemy_level_1> enemies_level_1 = new LinkedList<Enemy_level_1>();
 
     public static GameState gameState;
 

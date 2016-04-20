@@ -21,11 +21,25 @@ public class BackButton {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 800 && MouseManager.getY < 870) &&
                 time > 20) {
+
+            // Reset Times
             ExitButtonMainMenu.resetTime();
-            StateManager.setCurrentState(Engine.menuState);
+            ExitButton.resetTime();
+            // Which state to return
+            switch (StateManager.getPreviousState().name) {
+                case "Menu_State":
+                    StateManager.setCurrentState(Engine.menuState);
+                    break;
+                case "Pause_State":
+                    StateManager.setCurrentState(Engine.pauseState);
+                    break;
+                case "Dead_State":
+                    StateManager.setCurrentState(Engine.deadState);
+                    break;
+            }
             System.out.println("SWITCHED STATE : MenuState");
             time = 0;
-            ExitButton.resetTime();
+
         }
         time++;
     }

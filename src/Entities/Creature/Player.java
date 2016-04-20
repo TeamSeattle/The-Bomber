@@ -47,7 +47,7 @@ public class Player extends Entity {
         super(x, y, player_stand.getWidth(), player_stand.getHeight());
 
         // Initialize properties
-        HEALTH = 1;
+        HEALTH = 5;
         MAX_HEALTH = 5;
         ARMOUR = 5;
         MAX_ARMOUR = 5;

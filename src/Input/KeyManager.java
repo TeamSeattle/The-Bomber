@@ -22,10 +22,12 @@ public class KeyManager implements KeyListener {
         left = keys[KeyEvent.VK_LEFT] | keys[KeyEvent.VK_A];
         right = keys[KeyEvent.VK_RIGHT] | keys[KeyEvent.VK_D];
         escape = keys[KeyEvent.VK_ESCAPE];
-        auraSwitch = keys[KeyEvent.VK_E];
-        speedSwitch = keys[KeyEvent.VK_W];
+
+        // CHEATS
         boundsSwitch = keys[KeyEvent.VK_F1];
         killYourSelf = keys[KeyEvent.VK_F2];
+        auraSwitch = keys[KeyEvent.VK_F3];
+        speedSwitch = keys[KeyEvent.VK_F4];
     }
 
     @Override

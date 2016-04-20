@@ -15,7 +15,7 @@ public class VolumeButton {
      */
     public static void tick() {
         if (MouseManager.isClicked == 1 &&
-                (MouseManager.getX > 347 && MouseManager.getX < 550) &&
+                (MouseManager.getX > 347 && MouseManager.getX < 448) &&
                 (MouseManager.getY > 500 && MouseManager.getY < 570) &&
                 time > 20) {
             Engine.volume = !Engine.volume;
@@ -31,7 +31,7 @@ public class VolumeButton {
      * @param graphics -> Required
      */
     public static void render(Graphics graphics) {
-        if ((MouseManager.getX > 347 && MouseManager.getX < 550) &&
+        if ((MouseManager.getX > 347 && MouseManager.getX < 448) &&
                 (MouseManager.getY > 500 && MouseManager.getY < 570)) {
             if (Engine.volume) {
                 graphics.drawImage(Assets.volume_on_menu_button_hover, 347, 500, null);

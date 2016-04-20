@@ -2,9 +2,7 @@ package DIsplay.Menus.LevelButtons;
 
 import Graphics.Assets;
 import Input.MouseManager;
-import Main.Engine;
-import States.GameState;
-import States.StateManager;
+import States.AllStates.GameState;
 
 import java.awt.*;
 

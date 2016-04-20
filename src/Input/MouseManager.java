@@ -23,7 +23,7 @@ public class MouseManager extends MouseAdapter {
         click = e.BUTTON1;
         x = e.getX();
         y = e.getY();
-        System.out.println(click + " " + x + " " + y);
+        // System.out.println(click + " " + x + " " + y);
     }
 
     @Override

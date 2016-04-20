@@ -2,6 +2,8 @@ package DIsplay.Menus.ExitButtons;
 
 import Graphics.Assets;
 import Input.MouseManager;
+import Main.Engine;
+import States.StateManager;
 
 import java.awt.*;
 
@@ -17,7 +19,7 @@ public class ExitButtonMainMenu {
                 (MouseManager.getX > 347 && MouseManager.getX < 550) &&
                 (MouseManager.getY > 800 && MouseManager.getY < 870) &&
                 time > 20) {
-            System.exit(0);
+            StateManager.setCurrentState(Engine.exitState);
             time = 0;
         }
         time++;

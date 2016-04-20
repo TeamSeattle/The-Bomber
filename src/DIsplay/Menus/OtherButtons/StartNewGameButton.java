@@ -6,7 +6,7 @@ import java.awt.*;
 
 import Graphics.Assets;
 import Main.Engine;
-import States.GameState;
+import States.AllStates.GameState;
 import States.StateManager;
 
 public class StartNewGameButton {

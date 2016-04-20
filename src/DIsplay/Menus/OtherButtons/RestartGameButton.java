@@ -3,7 +3,7 @@ package DIsplay.Menus.OtherButtons;
 import Graphics.Assets;
 import Input.MouseManager;
 import Main.Engine;
-import States.GameState;
+import States.AllStates.GameState;
 import States.StateManager;
 
 import java.awt.*;

@@ -1,8 +1,9 @@
-package States;
+package States.AllStates;
 
 import DIsplay.Menus.OtherButtons.BackButton;
 import Main.Engine;
 import Graphics.Assets;
+import States.State;
 
 import java.awt.*;
 
@@ -10,6 +11,7 @@ public class InfoState extends State {
 
     public InfoState(Engine engine) {
         super(engine);
+        name = "Info_State";
     }
 
     @Override

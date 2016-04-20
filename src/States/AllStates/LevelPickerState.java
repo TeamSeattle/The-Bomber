@@ -1,4 +1,4 @@
-package States;
+package States.AllStates;
 
 import DIsplay.Menus.OtherButtons.BackButton;
 import DIsplay.Menus.LevelButtons.Level1Button;
@@ -7,6 +7,7 @@ import DIsplay.Menus.LevelButtons.Level3Button;
 import DIsplay.Menus.LevelButtons.Level4Button;
 import Main.Engine;
 import Graphics.Assets;
+import States.State;
 
 import java.awt.*;
 
@@ -14,6 +15,7 @@ public class LevelPickerState extends State {
 
     public LevelPickerState(Engine engine) {
         super(engine);
+        name = "Level_Picker_State";
     }
 
     @Override

@@ -1,10 +1,7 @@
 package DIsplay;
 
 import Graphics.Assets;
-import Main.Engine;
-import States.GameState;
-import States.StateManager;
-import Utilities.Utilities;
+import States.AllStates.GameState;
 
 import java.awt.*;
 

@@ -6,7 +6,7 @@ import java.awt.*;
 
 import Graphics.Assets;
 import Main.Engine;
-import States.PauseState;
+import States.AllStates.PauseState;
 import States.StateManager;
 
 public class ResumeButton {

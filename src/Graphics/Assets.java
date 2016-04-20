@@ -112,6 +112,7 @@ public class Assets {
     public static BufferedImage set4_tiles;
 
     public static BufferedImage menu_background;
+    public static BufferedImage exit_background;
     public static BufferedImage info_background;
     public static BufferedImage darken;
 
@@ -159,6 +160,13 @@ public class Assets {
     public static BufferedImage back_button_hover;
     public static BufferedImage info_button;
     public static BufferedImage info_button_hover;
+    public static BufferedImage stats_button;
+    public static BufferedImage stats_button_hover;
+
+    public static BufferedImage yes_button;
+    public static BufferedImage yes_button_hover;
+    public static BufferedImage no_button;
+    public static BufferedImage no_button_hover;
 
     public static BufferedImage level_1;
     public static BufferedImage level_1_hover;
@@ -292,6 +300,8 @@ public class Assets {
         darken = ImageLoader.loadImage("/textures/Backgrounds/darken.png");
         info_background = ImageLoader.loadImage("/textures/Backgrounds/info_background.png");
         info_background = Utilities.scaleImage(info_background, 1.245, 1.13);
+        exit_background = ImageLoader.loadImage("/textures/Backgrounds/exit_background.png");
+        exit_background = Utilities.scaleImage(exit_background, 1.245, 1.13);
 
         // PLAYER
         player_stand = ImageLoader.loadImage("/textures/Player/player_stand.png");
@@ -330,6 +340,10 @@ public class Assets {
         level_button = ImageLoader.loadImage("/textures/menu/Button_level.png");
         back_button = ImageLoader.loadImage("/textures/menu/Button_back.png");
         info_button = ImageLoader.loadImage("/textures/menu/Button_info.png");
+        stats_button = ImageLoader.loadImage("/textures/menu/Button_stats.png");
+
+        yes_button = ImageLoader.loadImage("/textures/menu/Button_yes.png");
+        no_button = ImageLoader.loadImage("/textures/menu/Button_no.png");
 
         level_1 = ImageLoader.loadImage("/textures/menu/Button_level_1.png");
         level_1_selected = ImageLoader.loadImage("/textures/menu/Button_level_1_selected.png");
@@ -352,6 +366,10 @@ public class Assets {
         level_button_hover = ImageLoader.loadImage("/textures/menu/Button_level_hover.png");
         back_button_hover = ImageLoader.loadImage("/textures/menu/Button_back_hover.png");
         info_button_hover = ImageLoader.loadImage("/textures/menu/Button_info_hover.png");
+        stats_button_hover = ImageLoader.loadImage("/textures/menu/Button_stats_hover.png");
+
+        yes_button_hover = ImageLoader.loadImage("/textures/menu/Button_yes_hover.png");
+        no_button_hover = ImageLoader.loadImage("/textures/menu/Button_no_hover.png");
 
         level_1_hover = ImageLoader.loadImage("/textures/menu/Button_level_1_hover.png");
         level_2_hover = ImageLoader.loadImage("/textures/menu/Button_level_2_hover.png");
