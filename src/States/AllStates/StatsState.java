@@ -33,14 +33,39 @@ public class StatsState extends State {
         graphics.drawString(" Statistics ",360,360);
 
         // Render Stats
-        ArrayList<String> score = Statistics.getScores();
-        Collections.reverse(score);
-        int yPosition = 420;
-        int place = 1;
-        for (String individualScore : score) {
-            graphics.drawString(individualScore,250,yPosition);
+        ArrayList<String[]> score = Statistics.getScores();
+
+        graphics.setColor(Color.WHITE);
+        // Draw position
+        int position = 1;
+        int yPosition = 410;
+        for (int i = 0; i < 10; i++) {
+            graphics.drawString(String.format("%02d",position),250,yPosition);
+            position++;
             yPosition += 40;
-            place++;
+        }
+        yPosition = 410;
+        int count = 0;
+        // Draw points
+        for (String[] entry : score) {
+            if (count < 10){
+                String points = entry[0];
+                graphics.drawString("|  " + points,300,yPosition);
+                yPosition += 40;
+            }
+            count++;
+        }
+        yPosition = 410;
+
+        count = 0;
+        // Draw Names
+        for (String[] entry : score) {
+            if (count < 10){
+                String name = entry[1];
+                graphics.drawString("|  " + name,420,yPosition);
+                yPosition += 40;
+            }
+            count++;
         }
 
         BackButton.render(graphics);

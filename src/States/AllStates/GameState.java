@@ -27,7 +27,7 @@ import java.awt.*;
 public class GameState extends State {
 
     private float enemyCount = 25;
-    private float powerUpsCount = 100;
+    private float powerUpsCount = 4;
     //Create time player with name "player",for the test :)
     private Player player;
     private EnemyController enemyController;

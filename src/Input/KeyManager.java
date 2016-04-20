@@ -14,6 +14,7 @@ public class KeyManager implements KeyListener {
     public static boolean boundsSwitch;
     public static boolean killYourSelf;
 
+
     public KeyManager() {
         keys = new boolean[256];
     }

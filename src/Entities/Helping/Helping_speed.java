@@ -8,12 +8,12 @@ import Utilities.Utilities;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Helping_speed extends Entity {
+class Helping_speed extends Entity {
 
     protected float speed = Utilities.getRandom(1, 5);
     private static BufferedImage speedImage = Assets.speed;
 
-    public Helping_speed(float x, float y) {
+    Helping_speed(float x, float y) {
         super(x, y, speedImage.getWidth(), speedImage.getHeight());
     }
 

@@ -1,5 +1,7 @@
 package DIsplay;
 
+import Effects.Effect_Aura;
+import Entities.Creature.Player;
 import Graphics.Assets;
 import States.AllStates.GameState;
 
@@ -13,10 +15,7 @@ public class UI {
         this.gameState = state;
     }
 
-    private int time = 1000;
-
     public void tick() {
-        time--;
     }
 
     /**
@@ -36,7 +35,7 @@ public class UI {
     /**
      * This method will render the health power up
      */
-    public void renderHealth(Graphics graphics) {
+    private void renderHealth(Graphics graphics) {
         int getPosition = 0;
         for (int i = 0; i < gameState.getPlayer().HEALTH; i++) {
             graphics.drawImage(Assets.health, 32 * i + 15, 10, null);
@@ -50,7 +49,7 @@ public class UI {
     /**
      * This method will render the armor power-up
      */
-    public void renderArmour(Graphics graphics) {
+    private void renderArmour(Graphics graphics) {
         int getPosition = 0;
         for (int i = 0; i < gameState.getPlayer().ARMOUR; i++) {
             graphics.drawImage(Assets.armor, 32 * i + 15, 52, null);
@@ -64,16 +63,16 @@ public class UI {
     /**
      * This method will render the points of the player
      */
-    public void renderPoints(Graphics graphics) {
+    private void renderPoints(Graphics graphics) {
         graphics.setColor(Color.white);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 28));
-        graphics.drawString("PTS: " + gameState.getPlayer().POINTS, 20, 123);
+        graphics.drawString("PTS: " + Player.POINTS, 20, 123);
     }
 
     /**
      * This method will render the power-ips UI
      */
-    public void renderPowerUps(Graphics graphics) {
+    private void renderPowerUps(Graphics graphics) {
 
         // Set font
         graphics.setColor(Color.white);
@@ -85,7 +84,7 @@ public class UI {
         }
 
         // Render Aura effect data
-        if (gameState.getPlayer().aura_eff.getIsActive()) {
+        if (Effect_Aura.getIsActive()) {
             graphics.drawString(gameState.getPlayer().aura_eff.getTimeLeft() + " ", 758, 47);
         } else {
             graphics.drawString("NONE", 728, 47);

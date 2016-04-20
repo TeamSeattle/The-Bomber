@@ -20,7 +20,7 @@ public class MouseManager extends MouseAdapter {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        click = e.BUTTON1;
+        click = MouseEvent.BUTTON1;
         x = e.getX();
         y = e.getY();
         // System.out.println(click + " " + x + " " + y);

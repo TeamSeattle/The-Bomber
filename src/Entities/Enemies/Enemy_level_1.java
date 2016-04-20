@@ -1,16 +1,18 @@
 package Entities.Enemies;
 
 import Effects.Effect_Aura;
+import Entities.Creature.Player;
 import Entities.Entity;
 import Graphics.Assets;
 import Main.Engine;
 import States.StateManager;
+import Statistics.Statistics;
 import Utilities.Utilities;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Enemy_level_1 extends Entity {
+class Enemy_level_1 extends Entity {
 
     private float speed = Utilities.getRandom(1, 5);
     private static BufferedImage enemy = Assets.enemy;
@@ -21,7 +23,7 @@ public class Enemy_level_1 extends Entity {
      * @param x -> X Position
      * @param y -> Y Position
      */
-    public Enemy_level_1(float x, float y) {
+    Enemy_level_1(float x, float y) {
         super(x, y, Enemy_level_1.enemy.getWidth(), Enemy_level_1.enemy.getHeight());
     }
 
@@ -78,6 +80,10 @@ public class Enemy_level_1 extends Entity {
                             EnemyController.gameState.getPlayer().isDead = true;
                             Utilities.sleep(2);
                             StateManager.setCurrentState(Engine.deadState);
+                            if (Player.POINTS >= Statistics.getLowest()){
+                                Statistics.addScores(Player.POINTS,Statistics.NAME);
+                            }
+                            Statistics.saveScores();
                         }
                     }
                 }

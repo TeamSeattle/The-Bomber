@@ -8,13 +8,13 @@ public class Display {
 
     // Properties that we will use
     // ===========================
-    private JFrame mainFrame;
+    public static JFrame mainFrame;
     private Canvas mainCanvas;
 
     // Width and the height are in pixels
-    public static final String GAME_NAME = "The Bomber";
+    private static final String GAME_NAME = "The Bomber";
     public static final int WINDOW_WIDTH = 896;
-    public static final int WINDOW_HEIGHT = 960;
+    private static final int WINDOW_HEIGHT = 960;
 
 
     //    6 7 8 9
@@ -82,7 +82,7 @@ public class Display {
 
 
     public JFrame getFrame(){
-        return  this.mainFrame;
+        return  mainFrame;
     }
 
     /**

@@ -4,9 +4,6 @@ import Graphics.Assets;
 
 import java.awt.*;
 
-/**
- * Created by Ivailo on 17-Apr-16.
- */
 public class Effect_Speed {
 
     private static boolean isActive;
@@ -16,7 +13,7 @@ public class Effect_Speed {
      * Constructor
      */
     public Effect_Speed(boolean isActive) {
-        this.isActive = isActive;
+        Effect_Speed.isActive = isActive;
     }
 
     /**

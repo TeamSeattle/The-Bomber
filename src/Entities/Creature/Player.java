@@ -18,7 +18,7 @@ public class Player extends Entity {
     // Properties of the player
     public int HEALTH;
     public int MAX_HEALTH;
-    public float SPEED;
+    private float SPEED;
     public int ARMOUR;
     public int MAX_ARMOUR;
 
@@ -90,7 +90,7 @@ public class Player extends Entity {
         if (KeyManager.auraSwitch) {
             Effect_Aura.setIsActive(true);
         }
-        if (aura_eff.getIsActive()) {
+        if (Effect_Aura.getIsActive()) {
             aura_eff.tick();
             System.out.println("Effect_Aura tick");
         }
@@ -125,7 +125,7 @@ public class Player extends Entity {
         graphics.drawImage(getCorrectFrame(), (int) x, (int) y, null);
 
         // Aura
-        if (aura_eff.getIsActive()) {
+        if (Effect_Aura.getIsActive()) {
             aura_eff.render(graphics, (int) x - 71, (int) y - 64);
         }
 

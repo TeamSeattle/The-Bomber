@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class Level4Button {
 
-    public static boolean isSelected = false;
+    static boolean isSelected = false;
     private static int time = 0;
 
     /**

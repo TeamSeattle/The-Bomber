@@ -1,5 +1,6 @@
 package Entities.Enemies;
 
+import Entities.Creature.Player;
 import States.AllStates.GameState;
 import Utilities.Utilities;
 
@@ -20,7 +21,7 @@ public class EnemyController {
      * @param gameState -> Needs to know in what state is the game
      */
     public EnemyController(GameState gameState) {
-        this.gameState = gameState;
+        EnemyController.gameState = gameState;
     }
 
     /**
@@ -78,23 +79,15 @@ public class EnemyController {
      * This method will add enemies to the cycle
      * @param block -> What enemy to add
      */
-    public void addEnemies (Enemy_level_1 block){
+    private void addEnemies(Enemy_level_1 block){
         enemies_level_1.add(block);
-    }
-
-    /**
-     * This method will remove an enemy from the cycle
-     * @param block -> What enemy to remove
-     */
-    public void removeEnemies (Enemy_level_1 block){
-        enemies_level_1.remove(block);
     }
 
     /**
      * Add points to the player
      */
     private void addPoint(){
-        gameState.getPlayer().POINTS++;
+        Player.POINTS++;
     }
 
 }

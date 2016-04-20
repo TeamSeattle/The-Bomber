@@ -21,12 +21,11 @@ import DIsplay.Menus.OtherButtons.VolumeButton;
 import Main.Engine;
 import Graphics.Assets;
 import States.State;
+import Statistics.Statistics;
 
 import java.awt.*;
 
 public class MenuState extends State {
-
-    private Engine engine;
 
     /**
      * Constructor
@@ -57,6 +56,8 @@ public class MenuState extends State {
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.setFont(new Font("TimesRoman", Font.BOLD, 32));
         graphics.drawString(" Main Menu ",355,360);
+        graphics.setFont(new Font("TimesRoman", Font.BOLD, 20));
+        graphics.drawString(" Welcome: " + Statistics.NAME,5,25);
 
         // Render all the buttons
         StartNewGameButton.render(graphics);

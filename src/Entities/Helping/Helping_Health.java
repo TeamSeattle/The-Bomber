@@ -7,12 +7,12 @@ import Utilities.Utilities;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Helping_Health extends Entity {
+class Helping_Health extends Entity {
 
     protected float speed = Utilities.getRandom(1, 5);
     private static BufferedImage health = Assets.health;
 
-    public Helping_Health(float x, float y) {
+    Helping_Health(float x, float y) {
         super(x, y, health.getWidth(), health.getHeight());
     }
 

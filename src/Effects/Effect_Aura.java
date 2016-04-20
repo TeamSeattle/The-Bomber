@@ -13,7 +13,7 @@ public class Effect_Aura {
      * Constructor
      */
     public Effect_Aura(boolean isActive) {
-        this.isActive = isActive;
+        Effect_Aura.isActive = isActive;
     }
 
     /**

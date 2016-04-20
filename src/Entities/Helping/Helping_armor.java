@@ -1,6 +1,5 @@
 package Entities.Helping;
 
-import Entities.Enemies.EnemyController;
 import Entities.Entity;
 import Graphics.Assets;
 import Utilities.Utilities;
@@ -8,12 +7,12 @@ import Utilities.Utilities;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Helping_armor extends Entity {
+class Helping_armor extends Entity {
 
     protected float speed = Utilities.getRandom(1, 5);
     private static BufferedImage armor = Assets.armor;
 
-    public Helping_armor(float x, float y) {
+    Helping_armor(float x, float y) {
         super(x, y, armor.getWidth(), armor.getHeight());
     }
 

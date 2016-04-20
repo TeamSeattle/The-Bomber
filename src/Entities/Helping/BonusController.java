@@ -30,7 +30,7 @@ public class BonusController {
     private static final int DEAD_LINE = 700;
 
     public BonusController(GameState gameState) {
-        this.gameState = gameState;
+        BonusController.gameState = gameState;
     }
 
     public void createBonuses(float healthObjectCount) {

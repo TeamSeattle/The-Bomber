@@ -9,12 +9,12 @@ import Utilities.Utilities;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Helping_aura extends Entity {
+class Helping_aura extends Entity {
 
     protected float speed = Utilities.getRandom(1, 5);
     private static BufferedImage aura = Assets.aura;
 
-    public Helping_aura(float x, float y) {
+    Helping_aura(float x, float y) {
         super(x, y, aura.getWidth(), aura.getHeight());
     }
 

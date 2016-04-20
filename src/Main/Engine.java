@@ -37,6 +37,7 @@ import States.*;
 import States.AllStates.*;
 import Statistics.Statistics;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
@@ -52,11 +53,11 @@ public class Engine implements Runnable {
     private boolean running = false;
 
     // Properties for rendering
-    public BufferStrategy bufferStrategy;
+    private BufferStrategy bufferStrategy;
     public static Graphics graphics;
 
     // Stats
-    public static Statistics statistics;
+    private static Statistics statistics;
 
     // All the states
     public static State gameState;
@@ -134,6 +135,15 @@ public class Engine implements Runnable {
      */
     private void initialize() {
 
+        // Initialize Stats
+        statistics = new Statistics();
+
+        // Get the user name/username
+        Statistics.NAME = JOptionPane.showInputDialog(Display.mainFrame, "Choose your username:");
+        if (Statistics.NAME == null) {
+            System.exit(0);
+        }
+
         // Initialize display
         display = new Display();
 
@@ -143,9 +153,6 @@ public class Engine implements Runnable {
         display.getCanvas().addMouseMotionListener(mouseManager);
         // Initialize assets
         Assets.initialize();
-
-        // Stats
-        statistics = new Statistics();
 
         // Initialize states
         gameState = new GameState(this);
@@ -211,18 +218,11 @@ public class Engine implements Runnable {
         bufferStrategy.show();
     }
 
-    public KeyManager getKeyManager() {
-        return keyManager;
-    }
-    public MouseManager getMouseManager() {
-        return mouseManager;
-    }
-
     /**
      * The method will start the thread. Initialize the thread object.
      * When we call thread.start(); the thread will call the run() method.
      */
-    public synchronized void start() {
+    synchronized void start() {
         if (running) {
             return;
         }
@@ -235,7 +235,7 @@ public class Engine implements Runnable {
     /**
      * The method will stop the thread thread.join gives exception
      */
-    public synchronized void stop() {
+    private synchronized void stop() {
         if (running) {
             running = false;
             try {
@@ -254,17 +254,5 @@ public class Engine implements Runnable {
 
     public State getGameState() {
         return gameState;
-    }
-
-    public State getMenuState() {
-        return menuState;
-    }
-
-    public State getDeadState() {
-        return deadState;
-    }
-
-    public State getPauseState() {
-        return pauseState;
     }
 }

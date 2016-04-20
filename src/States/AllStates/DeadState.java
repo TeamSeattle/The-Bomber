@@ -23,14 +23,12 @@ import java.awt.*;
 
 public class DeadState extends State {
 
-    private Engine engine;
     /**
      * Constructor
      */
     public DeadState(Engine engine){
         super(engine);
         name = "Dead_State";
-        this.engine = engine;
     }
 
     @Override
