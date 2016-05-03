@@ -69,7 +69,7 @@ public class Engine implements Runnable {
     public static State statsState;
     public static State exitState;
 
-    //Input
+    // Input
     private KeyManager keyManager;
     private MouseManager mouseManager;
 
@@ -248,7 +248,7 @@ public class Engine implements Runnable {
         }
     }
 
-    public static Engine getEngine(){
+    public static Engine getEngine() {
         return new Engine();
     }
 
